@@ -1,0 +1,177 @@
+# Entity: weather
+
+main: kit: entity: weather: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "condition"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "forecast"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "location"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "temperature"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "unit"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "weather"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "forecast"
+                orig: "forecast"
+                reqd: false
+                type: "`$BOOLEAN`"
+              }
+              {
+                example: 51.5074
+                kind: "query"
+                name: "lat"
+                orig: "lat"
+                reqd: false
+                type: "`$NUMBER`"
+              }
+              {
+                example: "London,UK"
+                kind: "query"
+                name: "location"
+                orig: "location"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                example: -0.1276
+                kind: "query"
+                name: "lon"
+                orig: "lon"
+                reqd: false
+                type: "`$NUMBER`"
+              }
+              {
+                example: "default"
+                kind: "query"
+                name: "unit"
+                orig: "unit"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/glax_weather.json"
+          parts: [
+            "glax_weather.json"
+          ]
+          select: {
+            exist: [
+              "forecast"
+              "lat"
+              "location"
+              "lon"
+              "unit"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "forecast"
+                orig: "forecast"
+                reqd: false
+                type: "`$BOOLEAN`"
+              }
+              {
+                example: 51.5074
+                kind: "query"
+                name: "lat"
+                orig: "lat"
+                reqd: false
+                type: "`$NUMBER`"
+              }
+              {
+                example: "London,UK"
+                kind: "query"
+                name: "location"
+                orig: "location"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                example: -0.1276
+                kind: "query"
+                name: "lon"
+                orig: "lon"
+                reqd: false
+                type: "`$NUMBER`"
+              }
+              {
+                example: "default"
+                kind: "query"
+                name: "unit"
+                orig: "unit"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/glax_weather.png"
+          parts: [
+            "glax_weather.png"
+          ]
+          select: {
+            exist: [
+              "forecast"
+              "lat"
+              "location"
+              "lon"
+              "unit"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

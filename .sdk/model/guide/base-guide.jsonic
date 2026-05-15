@@ -1,0 +1,17 @@
+# Guide
+
+guide: {
+  metrics: count: entity: 1
+  metrics: count: path: 2
+  metrics: count: method: 2
+
+  entity: weather: {
+    path: "/glax_weather.json": {
+      op: list: method: *GET
+    }
+    path: "/glax_weather.png": {
+      op: load: method: *GET
+    }
+  }
+
+}

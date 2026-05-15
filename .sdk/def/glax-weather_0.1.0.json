@@ -1,0 +1,228 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Glax Weather API",
+    "description": "This API provides current weather data for a specified location, presenting information visually through Glax. Users can retrieve data in JSON or PNG formats and customize their queries with parameters like location, units, and forecast options.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Mattia Basaglia",
+      "url": "https://dragon.best"
+    },
+    "license": {
+      "name": "CC BY-SA",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://dragon.best/api",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/glax_weather.json": {
+      "get": {
+        "summary": "Get weather data in JSON format",
+        "description": "Returns current weather data for a specified location in JSON format, showing Glax in the current weather.",
+        "operationId": "getWeatherJson",
+        "tags": [
+          "Weather"
+        ],
+        "parameters": [
+          {
+            "name": "location",
+            "in": "query",
+            "description": "Weather location in format 'city,country'",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "London,UK"
+          },
+          {
+            "name": "lon",
+            "in": "query",
+            "description": "Longitude (only used if location isn't given)",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "format": "float"
+            },
+            "example": -0.1276
+          },
+          {
+            "name": "lat",
+            "in": "query",
+            "description": "Latitude (only used if location isn't given)",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "format": "float"
+            },
+            "example": 51.5074
+          },
+          {
+            "name": "units",
+            "in": "query",
+            "description": "Measure units for temperature and other metrics",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "default",
+                "metric",
+                "imperial"
+              ],
+              "default": "default"
+            }
+          },
+          {
+            "name": "forecast",
+            "in": "query",
+            "description": "Show weather forecast",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with weather data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "location": {
+                      "type": "string",
+                      "description": "Location name"
+                    },
+                    "temperature": {
+                      "type": "number",
+                      "description": "Current temperature"
+                    },
+                    "conditions": {
+                      "type": "string",
+                      "description": "Weather conditions"
+                    },
+                    "units": {
+                      "type": "string",
+                      "description": "Units used for measurements"
+                    },
+                    "forecast": {
+                      "type": "array",
+                      "description": "Weather forecast data (if requested)",
+                      "items": {
+                        "type": "object"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - invalid parameters"
+          },
+          "404": {
+            "description": "Location not found"
+          }
+        }
+      }
+    },
+    "/glax_weather.png": {
+      "get": {
+        "summary": "Get weather data as PNG image",
+        "description": "Returns current weather data for a specified location as a PNG image, showing Glax in the current weather.",
+        "operationId": "getWeatherPng",
+        "tags": [
+          "Weather"
+        ],
+        "parameters": [
+          {
+            "name": "location",
+            "in": "query",
+            "description": "Weather location in format 'city,country'",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "London,UK"
+          },
+          {
+            "name": "lon",
+            "in": "query",
+            "description": "Longitude (only used if location isn't given)",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "format": "float"
+            },
+            "example": -0.1276
+          },
+          {
+            "name": "lat",
+            "in": "query",
+            "description": "Latitude (only used if location isn't given)",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "format": "float"
+            },
+            "example": 51.5074
+          },
+          {
+            "name": "units",
+            "in": "query",
+            "description": "Measure units for temperature and other metrics",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "default",
+                "metric",
+                "imperial"
+              ],
+              "default": "default"
+            }
+          },
+          {
+            "name": "forecast",
+            "in": "query",
+            "description": "Show weather forecast",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with weather image",
+            "content": {
+              "image/png": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - invalid parameters"
+          },
+          "404": {
+            "description": "Location not found"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Weather",
+      "description": "Weather data endpoints"
+    }
+  ]
+}

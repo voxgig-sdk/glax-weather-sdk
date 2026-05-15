@@ -1,0 +1,28 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        name: "Mattia Basaglia"
+        url: "https://dragon.best"
+      }
+      description: "This API provides current weather data for a specified location, presenting information visually through Glax. Users can retrieve data in JSON or PNG formats and customize their queries with parameters like location, units, and forecast options."
+      license: {
+        name: "CC BY-SA"
+        url: "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+      servers: [
+        {
+          description: "Production server"
+          url: "https://dragon.best/api"
+        }
+      ]
+      title: "Glax Weather API"
+      version: "1.0.0"
+    }
+  }
+}
+
+}
