@@ -6,21 +6,24 @@
         "forecast": [],
         "location": "s34",
         "temperature": 53,
-        "unit": "s36"
+        "unit": "s36",
+        "id": "WEATHER00"
       },
       "WEATHER01": {
         "condition": "s64",
         "forecast": [],
         "location": "s66",
         "temperature": 103,
-        "unit": "s68"
+        "unit": "s68",
+        "id": "WEATHER01"
       },
       "WEATHER02": {
         "condition": "s96",
         "forecast": [],
         "location": "s98",
         "temperature": 153,
-        "unit": "s9a"
+        "unit": "s9a",
+        "id": "WEATHER02"
       }
     }
   },

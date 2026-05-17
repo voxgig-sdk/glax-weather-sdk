@@ -1,6 +1,6 @@
 package utility
 
-import "github.com/voxgig-sdk/glax-weather-sdk/core"
+import "github.com/voxgig-sdk/glax-weather-sdk/go/core"
 
 func prepareBodyUtil(ctx *core.Context) any {
 	op := ctx.Op

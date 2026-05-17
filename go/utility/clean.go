@@ -1,6 +1,6 @@
 package utility
 
-import "github.com/voxgig-sdk/glax-weather-sdk/core"
+import "github.com/voxgig-sdk/glax-weather-sdk/go/core"
 
 func cleanUtil(ctx *core.Context, val any) any {
 	return val
