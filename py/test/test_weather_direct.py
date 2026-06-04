@@ -99,14 +99,12 @@ def _weather_direct_setup(mockres):
     env = runner.env_override({
         "GLAXWEATHER_TEST_WEATHER_ENTID": {},
         "GLAXWEATHER_TEST_LIVE": "FALSE",
-        "GLAXWEATHER_APIKEY": "NONE",
     })
 
     live = env.get("GLAXWEATHER_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
-            "apikey": env.get("GLAXWEATHER_APIKEY"),
         }
         client = GlaxWeatherSDK(merged_opts)
         return {

@@ -92,7 +92,6 @@ function weather_basic_setup($extra)
         "GLAXWEATHER_TEST_WEATHER_ENTID" => $idmap,
         "GLAXWEATHER_TEST_LIVE" => "FALSE",
         "GLAXWEATHER_TEST_EXPLAIN" => "FALSE",
-        "GLAXWEATHER_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -104,7 +103,6 @@ function weather_basic_setup($extra)
     if ($env["GLAXWEATHER_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["GLAXWEATHER_APIKEY"],
             ],
             $extra ?? [],
         ]);
