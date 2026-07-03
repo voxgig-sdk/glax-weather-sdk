@@ -10,13 +10,13 @@ The Ruby SDK for the GlaxWeather API — an entity-oriented client using idiomat
 
 ## Install
 ```bash
-gem install glax-weather-sdk
+gem install voxgig-sdk-glax-weather
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "glax-weather-sdk"
+gem "voxgig-sdk-glax-weather"
 ```
 
 Then run:

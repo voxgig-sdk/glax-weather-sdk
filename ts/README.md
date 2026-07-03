@@ -10,7 +10,7 @@ The TypeScript SDK for the GlaxWeather API — a type-safe, entity-oriented clie
 
 ## Install
 ```bash
-npm install glax-weather
+npm install @voxgig-sdk/glax-weather
 ```
 ## Tutorial: your first API call
 

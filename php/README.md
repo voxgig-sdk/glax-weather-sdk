@@ -10,7 +10,7 @@ The PHP SDK for the GlaxWeather API — an entity-oriented client using PHP conv
 
 ## Install
 ```bash
-composer require voxgig/glax-weather-sdk
+composer require voxgig-sdk/glax-weather
 ```
 
 

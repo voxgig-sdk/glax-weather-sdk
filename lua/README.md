@@ -10,7 +10,7 @@ The Lua SDK for the GlaxWeather API — an entity-oriented client using Lua conv
 
 ## Install
 ```bash
-luarocks install glax-weather-sdk
+luarocks install voxgig-sdk-glax-weather
 ```
 
 If the module is not yet published, add the source directory to

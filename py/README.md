@@ -10,7 +10,7 @@ The Python SDK for the GlaxWeather API — an entity-oriented client following P
 
 ## Install
 ```bash
-pip install glax-weather-sdk
+pip install voxgig-sdk-glax-weather
 ```
 
 Or install from source:
