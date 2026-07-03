@@ -119,6 +119,7 @@ function basicSetup(extra?: any) {
     'GLAX_WEATHER_TEST_WEATHER_ENTID': idmap,
     'GLAX_WEATHER_TEST_LIVE': 'FALSE',
     'GLAX_WEATHER_TEST_EXPLAIN': 'FALSE',
+    'GLAX_WEATHER_APIKEY': 'NONE',
   })
 
   idmap = env['GLAX_WEATHER_TEST_WEATHER_ENTID']
@@ -128,6 +129,7 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new GlaxWeatherSDK(merge([
       {
+        apikey: env.GLAX_WEATHER_APIKEY,
       },
       extra
     ]))

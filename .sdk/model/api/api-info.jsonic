@@ -21,27 +21,7 @@ main: {
       ]
       title: "Glax Weather API"
       version: "1.0.0"
-      tagline: "Current weather and hourly forecasts illustrated by Glax the dragon, in JSON or PNG"
-      homepage: "https://dragon.best/weather/"
-      docs_url: "https://dragon.best/api/"
-      license_short: "CC BY-SA (site content and underlying weather data)"
-      license_md: `- Site content and API responses are published under the Creative Commons Attribution-ShareAlike licence (CC BY-SA).
-- Underlying weather data is sourced from [OpenWeatherMap](https://openweathermap.org/), also distributed under CC BY-SA.
-- Attribute both \`dragon.best\` and OpenWeatherMap when redistributing data or imagery.`
-      about_md: `The Glax Weather API is part of [dragon.best](https://dragon.best/), a small collection of dragon-themed endpoints. The \`glax_weather\` endpoint returns the current weather for a location, optionally illustrated by Glax the dragon, in either JSON or PNG form.
-
-What you get from the API:
-
-- Current weather for a location specified either by name (\`location\`) or by coordinates (\`lat\` / \`lon\`).
-- Hourly forecast data when the \`forecast=on\` query parameter is supplied.
-- Choice of \`units\` (default, \`metric\`, or \`imperial\`).
-- PNG output rendered with Glax the dragon, or raw JSON for programmatic use.
-
-Weather data is provided by OpenWeatherMap. CORS is not enabled on the endpoint, so calls from browser code may need to go through a proxy. No authentication or documented rate limits are required for the public endpoint.`
-      entity_desc: {
-        weather: "Current conditions and optional hourly forecast for a location, returned as JSON or as a Glax-illustrated PNG via `GET /glax_weather.json` (add `?forecast=on` for the hourly forecast)."
-      }
-      auth: false
     }
   }
 }
+

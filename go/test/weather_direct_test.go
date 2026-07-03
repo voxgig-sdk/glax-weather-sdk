@@ -164,12 +164,14 @@ func weatherDirectSetup(mockres any) *weatherDirectSetupResult {
 	env := envOverride(map[string]any{
 		"GLAXWEATHER_TEST_WEATHER_ENTID": map[string]any{},
 		"GLAXWEATHER_TEST_LIVE":    "FALSE",
+		"GLAXWEATHER_APIKEY":       "NONE",
 	})
 
 	live := env["GLAXWEATHER_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
+			"apikey": env["GLAXWEATHER_APIKEY"],
 		}
 		client := sdk.NewGlaxWeatherSDK(mergedOpts)
 

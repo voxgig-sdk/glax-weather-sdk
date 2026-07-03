@@ -1,21 +1,8 @@
 # GlaxWeather SDK
 
-Current weather and hourly forecasts illustrated by Glax the dragon, in JSON or PNG
+Glax Weather API client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Glax Weather API
-
-The Glax Weather API is part of [dragon.best](https://dragon.best/), a small collection of dragon-themed endpoints. The `glax_weather` endpoint returns the current weather for a location, optionally illustrated by Glax the dragon, in either JSON or PNG form.
-
-What you get from the API:
-
-- Current weather for a location specified either by name (`location`) or by coordinates (`lat` / `lon`).
-- Hourly forecast data when the `forecast=on` query parameter is supplied.
-- Choice of `units` (default, `metric`, or `imperial`).
-- PNG output rendered with Glax the dragon, or raw JSON for programmatic use.
-
-Weather data is provided by OpenWeatherMap. CORS is not enabled on the endpoint, so calls from browser code may need to go through a proxy. No authentication or documented rate limits are required for the public endpoint.
 
 ## Try it
 
@@ -49,29 +36,31 @@ gem install glax-weather-sdk
 luarocks install glax-weather-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { GlaxWeatherSDK } from 'glax-weather'
 
-const client = new GlaxWeatherSDK({})
+const client = new GlaxWeatherSDK({
+  apikey: process.env.GLAX-WEATHER_APIKEY,
+})
 
 // List all weathers
 const weathers = await client.Weather().list()
+console.log(weathers.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -101,7 +90,7 @@ The API exposes one entity:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Weather** | Current conditions and optional hourly forecast for a location, returned as JSON or as a Glax-illustrated PNG via `GET /glax_weather.json` (add `?forecast=on` for the hourly forecast). | `/glax_weather.json` |
+| **Weather** |  | `/glax_weather.json` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -111,17 +100,20 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from glaxweather_sdk import GlaxWeatherSDK
 
-client = GlaxWeatherSDK({})
+client = GlaxWeatherSDK({
+    "apikey": os.environ.get("GLAX-WEATHER_APIKEY"),
+})
 
 # List all weathers
-weathers, err = client.Weather(None).list(None, None)
+weathers, err = client.Weather().list()
+print(weathers)
 
 # Load a specific weather
-weather, err = client.Weather(None).load(
-    {"id": "example_id"}, None
-)
+weather, err = client.Weather().load({"id": "example_id"})
+print(weather)
 ```
 
 ### PHP
@@ -130,15 +122,17 @@ weather, err = client.Weather(None).load(
 <?php
 require_once 'glaxweather_sdk.php';
 
-$client = new GlaxWeatherSDK([]);
+$client = new GlaxWeatherSDK([
+    "apikey" => getenv("GLAX-WEATHER_APIKEY"),
+]);
 
 // List all weathers
-[$weathers, $err] = $client->Weather(null)->list(null, null);
+[$weathers, $err] = $client->Weather()->list();
+print_r($weathers);
 
 // Load a specific weather
-[$weather, $err] = $client->Weather(null)->load(
-    ["id" => "example_id"], null
-);
+[$weather, $err] = $client->Weather()->load(["id" => "example_id"]);
+print_r($weather);
 ```
 
 ### Golang
@@ -146,10 +140,13 @@ $client = new GlaxWeatherSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/glax-weather-sdk/go"
 
-client := sdk.NewGlaxWeatherSDK(map[string]any{})
+client := sdk.NewGlaxWeatherSDK(map[string]any{
+    "apikey": os.Getenv("GLAX-WEATHER_APIKEY"),
+})
 
 // List all weathers
 weathers, err := client.Weather(nil).List(nil, nil)
+fmt.Println(weathers)
 ```
 
 ### Ruby
@@ -157,15 +154,17 @@ weathers, err := client.Weather(nil).List(nil, nil)
 ```ruby
 require_relative "GlaxWeather_sdk"
 
-client = GlaxWeatherSDK.new({})
+client = GlaxWeatherSDK.new({
+  "apikey" => ENV["GLAX-WEATHER_APIKEY"],
+})
 
 # List all weathers
-weathers, err = client.Weather(nil).list(nil, nil)
+weathers, err = client.Weather().list
+puts weathers
 
 # Load a specific weather
-weather, err = client.Weather(nil).load(
-  { "id" => "example_id" }, nil
-)
+weather, err = client.Weather().load({ "id" => "example_id" })
+puts weather
 ```
 
 ### Lua
@@ -173,15 +172,17 @@ weather, err = client.Weather(nil).load(
 ```lua
 local sdk = require("glax-weather_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("GLAX-WEATHER_APIKEY"),
+})
 
 -- List all weathers
-local weathers, err = client:Weather(nil):list(nil, nil)
+local weathers, err = client:Weather():list()
+print(weathers)
 
 -- Load a specific weather
-local weather, err = client:Weather(nil):load(
-  { id = "example_id" }, nil
-)
+local weather, err = client:Weather():load({ id = "example_id" })
+print(weather)
 ```
 
 ## Unit testing in offline mode
@@ -200,25 +201,21 @@ const result = await client.Weather().load({ id: 'test01' })
 ### Python
 
 ```python
-client = GlaxWeatherSDK.test(None, None)
-result, err = client.Weather(None).load(
-    {"id": "test01"}, None
-)
+client = GlaxWeatherSDK.test()
+result, err = client.Weather().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = GlaxWeatherSDK::test(null, null);
-[$result, $err] = $client->Weather(null)->load(
-    ["id" => "test01"], null
-);
+$client = GlaxWeatherSDK::test();
+[$result, $err] = $client->Weather()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Weather(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -227,19 +224,15 @@ result, err := client.Weather(nil).Load(
 ### Ruby
 
 ```ruby
-client = GlaxWeatherSDK.test(nil, nil)
-result, err = client.Weather(nil).load(
-  { "id" => "test01" }, nil
-)
+client = GlaxWeatherSDK.test
+result, err = client.Weather().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Weather(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Weather():load({ id = "test01" })
 ```
 
 ## How it works
@@ -343,15 +336,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Glax Weather API
-
-- Upstream: [https://dragon.best/weather/](https://dragon.best/weather/)
-- API docs: [https://dragon.best/api/](https://dragon.best/api/)
-
-- Site content and API responses are published under the Creative Commons Attribution-ShareAlike licence (CC BY-SA).
-- Underlying weather data is sourced from [OpenWeatherMap](https://openweathermap.org/), also distributed under CC BY-SA.
-- Attribute both `dragon.best` and OpenWeatherMap when redistributing data or imagery.
 
 ---
 

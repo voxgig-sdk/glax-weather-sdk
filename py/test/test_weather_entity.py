@@ -98,6 +98,7 @@ def _weather_basic_setup(extra):
         "GLAXWEATHER_TEST_WEATHER_ENTID": idmap,
         "GLAXWEATHER_TEST_LIVE": "FALSE",
         "GLAXWEATHER_TEST_EXPLAIN": "FALSE",
+        "GLAXWEATHER_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -108,6 +109,7 @@ def _weather_basic_setup(extra):
     if env.get("GLAXWEATHER_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
+                "apikey": env.get("GLAXWEATHER_APIKEY"),
             },
             extra or {},
         ])

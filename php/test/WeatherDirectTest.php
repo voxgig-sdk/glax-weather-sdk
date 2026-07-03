@@ -113,12 +113,14 @@ function weather_direct_setup($mockres)
     $env = Runner::env_override([
         "GLAXWEATHER_TEST_WEATHER_ENTID" => [],
         "GLAXWEATHER_TEST_LIVE" => "FALSE",
+        "GLAXWEATHER_APIKEY" => "NONE",
     ]);
 
     $live = $env["GLAXWEATHER_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
+            "apikey" => $env["GLAXWEATHER_APIKEY"],
         ];
         $client = new GlaxWeatherSDK($merged_opts);
         return [

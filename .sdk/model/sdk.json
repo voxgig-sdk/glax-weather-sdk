@@ -1,44 +1,13 @@
 {
-  "name": "glax-weather",
-  "origin": "voxgig-sdk",
   "def": "glax-weather_0.1.0.json",
   "main": {
+    "def": {
+      "desc": ""
+    },
     "kit": {
-      "info": {
-        "contact": {
-          "name": "Mattia Basaglia",
-          "url": "https://dragon.best"
-        },
-        "description": "This API provides current weather data for a specified location, presenting information visually through Glax. Users can retrieve data in JSON or PNG formats and customize their queries with parameters like location, units, and forecast options.",
-        "license": {
-          "name": "CC BY-SA",
-          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
-        },
-        "servers": [
-          {
-            "description": "Production server",
-            "url": "https://dragon.best/api"
-          }
-        ],
-        "title": "Glax Weather API",
-        "version": "1.0.0",
-        "tagline": "Current weather and hourly forecasts illustrated by Glax the dragon, in JSON or PNG",
-        "homepage": "https://dragon.best/weather/",
-        "docs_url": "https://dragon.best/api/",
-        "license_short": "CC BY-SA (site content and underlying weather data)",
-        "license_md": "- Site content and API responses are published under the Creative Commons Attribution-ShareAlike licence (CC BY-SA).\n- Underlying weather data is sourced from [OpenWeatherMap](https://openweathermap.org/), also distributed under CC BY-SA.\n- Attribute both `dragon.best` and OpenWeatherMap when redistributing data or imagery.",
-        "about_md": "The Glax Weather API is part of [dragon.best](https://dragon.best/), a small collection of dragon-themed endpoints. The `glax_weather` endpoint returns the current weather for a location, optionally illustrated by Glax the dragon, in either JSON or PNG form.\n\nWhat you get from the API:\n\n- Current weather for a location specified either by name (`location`) or by coordinates (`lat` / `lon`).\n- Hourly forecast data when the `forecast=on` query parameter is supplied.\n- Choice of `units` (default, `metric`, or `imperial`).\n- PNG output rendered with Glax the dragon, or raw JSON for programmatic use.\n\nWeather data is provided by OpenWeatherMap. CORS is not enabled on the endpoint, so calls from browser code may need to go through a proxy. No authentication or documented rate limits are required for the public endpoint.",
-        "entity_desc": {
-          "weather": "Current conditions and optional hourly forecast for a location, returned as JSON or as a Glax-illustrated PNG via `GET /glax_weather.json` (add `?forecast=on` for the hourly forecast)."
-        },
-        "auth": false
-      },
       "config": {
         "auth": {
           "prefix": "Bearer"
-        },
-        "headers": {
-          "content-type": "application/json"
         },
         "docs_order": [
           "ts",
@@ -47,96 +16,102 @@
           "go",
           "rb",
           "lua"
-        ]
+        ],
+        "headers": {
+          "content-type": "application/json"
+        }
       },
       "entity": {
         "weather": {
+          "active": true,
           "alias": {
             "field": {}
           },
           "fields": [
             {
+              "active": true,
               "name": "condition",
               "req": false,
-              "type": "`$STRING`",
-              "active": true
+              "type": "`$STRING`"
             },
             {
+              "active": true,
               "name": "forecast",
               "req": false,
-              "type": "`$ARRAY`",
-              "active": true
+              "type": "`$ARRAY`"
             },
             {
+              "active": true,
               "name": "location",
               "req": false,
-              "type": "`$STRING`",
-              "active": true
+              "type": "`$STRING`"
             },
             {
+              "active": true,
               "name": "temperature",
               "req": false,
-              "type": "`$NUMBER`",
-              "active": true
+              "type": "`$NUMBER`"
             },
             {
+              "active": true,
               "name": "unit",
               "req": false,
-              "type": "`$STRING`",
-              "active": true
+              "type": "`$STRING`"
             }
           ],
           "name": "weather",
           "op": {
             "list": {
+              "input": "data",
               "name": "list",
               "points": [
                 {
+                  "active": true,
                   "args": {
                     "query": [
                       {
+                        "active": true,
                         "kind": "query",
                         "name": "forecast",
                         "orig": "forecast",
                         "reqd": false,
-                        "type": "`$BOOLEAN`",
-                        "active": true
+                        "type": "`$BOOLEAN`"
                       },
                       {
+                        "active": true,
                         "example": 51.5074,
                         "kind": "query",
                         "name": "lat",
                         "orig": "lat",
                         "reqd": false,
-                        "type": "`$NUMBER`",
-                        "active": true
+                        "type": "`$NUMBER`"
                       },
                       {
+                        "active": true,
                         "example": "London,UK",
                         "kind": "query",
                         "name": "location",
                         "orig": "location",
                         "reqd": false,
-                        "type": "`$STRING`",
-                        "active": true
+                        "type": "`$STRING`"
                       },
                       {
+                        "active": true,
                         "example": -0.1276,
                         "kind": "query",
                         "name": "lon",
                         "orig": "lon",
                         "reqd": false,
-                        "type": "`$NUMBER`",
-                        "active": true
+                        "type": "`$NUMBER`"
                       },
                       {
+                        "active": true,
                         "example": "default",
                         "kind": "query",
                         "name": "unit",
                         "orig": "unit",
                         "reqd": false,
-                        "type": "`$STRING`",
-                        "active": true
+                        "type": "`$STRING`"
                       }
                     ]
                   },
@@ -157,61 +132,61 @@
                   "transform": {
                     "req": "`reqdata`",
                     "res": "`body`"
-                  },
-                  "active": true
+                  }
                 }
-              ],
-              "input": "data"
+              ]
             },
             "load": {
+              "input": "data",
               "name": "load",
               "points": [
                 {
+                  "active": true,
                   "args": {
                     "query": [
                       {
+                        "active": true,
                         "kind": "query",
                         "name": "forecast",
                         "orig": "forecast",
                         "reqd": false,
-                        "type": "`$BOOLEAN`",
-                        "active": true
+                        "type": "`$BOOLEAN`"
                       },
                       {
+                        "active": true,
                         "example": 51.5074,
                         "kind": "query",
                         "name": "lat",
                         "orig": "lat",
                         "reqd": false,
-                        "type": "`$NUMBER`",
-                        "active": true
+                        "type": "`$NUMBER`"
                       },
                       {
+                        "active": true,
                         "example": "London,UK",
                         "kind": "query",
                         "name": "location",
                         "orig": "location",
                         "reqd": false,
-                        "type": "`$STRING`",
-                        "active": true
+                        "type": "`$STRING`"
                       },
                       {
+                        "active": true,
                         "example": -0.1276,
                         "kind": "query",
                         "name": "lon",
                         "orig": "lon",
                         "reqd": false,
-                        "type": "`$NUMBER`",
-                        "active": true
+                        "type": "`$NUMBER`"
                       },
                       {
+                        "active": true,
                         "example": "default",
                         "kind": "query",
                         "name": "unit",
                         "orig": "unit",
                         "reqd": false,
-                        "type": "`$STRING`",
-                        "active": true
+                        "type": "`$STRING`"
                       }
                     ]
                   },
@@ -232,14 +207,11 @@
                   "transform": {
                     "req": "`reqdata`",
                     "res": "`body`"
-                  },
-                  "active": true
+                  }
                 }
-              ],
-              "input": "data"
+              ]
             }
           },
-          "active": true,
           "relations": {
             "ancestors": []
           }
@@ -247,9 +219,6 @@
       },
       "feature": {
         "test": {
-          "name": "test",
-          "title": "In-memory mock transport for testing without a live server",
-          "version": "0.0.1",
           "active": true,
           "config": {
             "options": {
@@ -257,6 +226,14 @@
             }
           },
           "hook": {
+            "GetData": {
+              "active": true,
+              "await": false
+            },
+            "GetMatch": {
+              "active": true,
+              "await": false
+            },
             "PostConstruct": {
               "active": true,
               "await": false
@@ -265,25 +242,11 @@
               "active": true,
               "await": false
             },
-            "SetData": {
-              "active": true,
-              "await": false
-            },
-            "GetData": {
-              "active": true,
-              "await": false
-            },
-            "SetMatch": {
-              "active": true
-            },
-            "GetMatch": {
-              "active": true,
+            "PostOperation": {
+              "active": false,
               "await": false
             },
             "PrePoint": {
-              "active": true
-            },
-            "PreSpec": {
               "active": true,
               "await": false
             },
@@ -299,20 +262,32 @@
               "active": true,
               "await": false
             },
+            "PreSpec": {
+              "active": true,
+              "await": false
+            },
             "PreTarget": {
               "active": false,
               "await": false
             },
-            "PostOperation": {
-              "active": false,
+            "SetData": {
+              "active": true,
+              "await": false
+            },
+            "SetMatch": {
+              "active": true,
               "await": false
             }
           },
+          "name": "test",
           "target": {
-            "ts": {
+            "go": {
               "deps": {}
             },
-            "go": {
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
               "deps": {}
             },
             "lua": {
@@ -327,23 +302,30 @@
             "rb": {
               "deps": {}
             },
-            "go-cli": {
-              "deps": {}
-            },
-            "go-mcp": {
+            "ts": {
               "deps": {}
             }
-          }
+          },
+          "title": "In-memory mock transport for testing without a live server",
+          "version": "0.0.1"
         }
       },
       "flow": {
         "BasicWeatherFlow": {
+          "active": true,
           "entity": "weather",
+          "key$": "BasicWeatherFlow",
           "kind": "basic",
           "name": "BasicWeatherFlow",
+          "param": {},
           "step": [
             {
+              "active": true,
+              "data": {},
+              "input": {},
+              "match": {},
               "op": "list",
+              "spec": [],
               "valid": [
                 {
                   "apply": "ItemExists",
@@ -351,20 +333,19 @@
                     "ref": "weather_ref01"
                   }
                 }
-              ],
-              "active": true,
-              "match": {},
-              "data": {},
-              "input": {},
-              "spec": []
+              ]
             },
             {
+              "active": true,
+              "data": {},
               "input": {
                 "ref": "weather_ref01",
                 "srcdatavar": "weather_ref01_data",
                 "suffix": "_dt0"
               },
+              "match": {},
               "op": "load",
+              "spec": [],
               "valid": [
                 {
                   "apply": "TextFieldMark",
@@ -372,28 +353,57 @@
                     "mark": "Mark01-weather_ref01"
                   }
                 }
-              ],
-              "active": true,
-              "match": {},
-              "data": {},
-              "spec": []
+              ]
             }
-          ],
-          "key$": "BasicWeatherFlow",
-          "active": true,
-          "param": {}
+          ]
         }
       },
+      "info": {
+        "contact": {
+          "name": "Mattia Basaglia",
+          "url": "https://dragon.best"
+        },
+        "description": "This API provides current weather data for a specified location, presenting information visually through Glax. Users can retrieve data in JSON or PNG formats and customize their queries with parameters like location, units, and forecast options.",
+        "license": {
+          "name": "CC BY-SA",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        },
+        "servers": [
+          {
+            "description": "Production server",
+            "url": "https://dragon.best/api"
+          }
+        ],
+        "title": "Glax Weather API",
+        "version": "1.0.0"
+      },
+      "option": {},
       "target": {
-        "go-cli": {
-          "title": "Go CLI",
-          "ext": "go",
+        "go": {
+          "active": true,
           "comment": {
             "line": "//"
           },
+          "deps": {},
+          "ext": "go",
           "module": {
             "name": "glax-weather"
           },
+          "name": "go",
+          "srcfeature": false,
+          "title": "Golang"
+        },
+        "go-cli": {
+          "active": true,
+          "comment": {
+            "line": "//"
+          },
+          "deps": {},
+          "ext": "go",
+          "module": {
+            "name": "glax-weather"
+          },
+          "name": "go-cli",
           "phase": {
             "entity": {
               "active": false
@@ -408,19 +418,19 @@
               "active": false
             }
           },
-          "deps": {},
-          "name": "go-cli",
-          "active": true
+          "title": "Go CLI"
         },
         "go-mcp": {
-          "title": "Go MCP server",
-          "ext": "go",
+          "active": true,
           "comment": {
             "line": "//"
           },
+          "deps": {},
+          "ext": "go",
           "module": {
             "name": "glax-weather"
           },
+          "name": "go-mcp",
           "phase": {
             "entity": {
               "active": false
@@ -435,138 +445,120 @@
               "active": false
             }
           },
-          "deps": {},
-          "name": "go-mcp",
-          "active": true
-        },
-        "ts": {
-          "title": "TypeScript",
-          "ext": "ts",
-          "comment": {
-            "line": "//"
-          },
-          "module": {
-            "name": "glax-weather"
-          },
-          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
-          "deps": {
-            "dotenv": {
-              "active": true,
-              "version": "^17.4.2",
-              "kind": "dev"
-            },
-            "typescript": {
-              "active": true,
-              "version": "^5.9.3",
-              "kind": "dev"
-            },
-            "@types/node": {
-              "active": true,
-              "version": "^25.6.0",
-              "kind": "dev"
-            }
-          },
-          "name": "ts",
-          "active": true
-        },
-        "go": {
-          "title": "Golang",
-          "ext": "go",
-          "comment": {
-            "line": "//"
-          },
-          "module": {
-            "name": "glax-weather"
-          },
-          "srcfeature": false,
-          "deps": {},
-          "name": "go",
-          "active": true
+          "title": "Go MCP server"
         },
         "lua": {
-          "title": "Lua",
-          "ext": "lua",
+          "active": true,
           "comment": {
             "line": "--"
           },
-          "module": {
-            "name": "glax-weather"
-          },
-          "srcfeature": false,
           "deps": {
             "dkjson": {
               "active": true,
-              "version": "2.5",
-              "kind": "prod"
+              "kind": "prod",
+              "version": "2.5"
             }
           },
+          "ext": "lua",
+          "module": {
+            "name": "glax-weather"
+          },
           "name": "lua",
-          "active": true
+          "srcfeature": false,
+          "title": "Lua"
         },
         "php": {
-          "title": "PHP",
-          "ext": "php",
+          "active": true,
           "comment": {
             "line": "//"
           },
+          "deps": {},
+          "ext": "php",
           "module": {
             "name": "glax-weather"
           },
-          "srcfeature": false,
-          "deps": {},
           "name": "php",
-          "active": true
+          "srcfeature": false,
+          "title": "PHP"
         },
         "py": {
-          "title": "Python",
-          "ext": "py",
+          "active": true,
           "comment": {
             "line": "#"
           },
-          "module": {
-            "name": "glax-weather"
-          },
-          "srcfeature": false,
           "deps": {
             "requests": {
               "active": true,
-              "version": "2.33",
-              "kind": "prod"
+              "kind": "prod",
+              "version": "2.33"
             }
           },
-          "name": "py",
-          "active": true
-        },
-        "rb": {
-          "title": "Ruby",
-          "ext": "rb",
-          "comment": {
-            "line": "#"
-          },
+          "ext": "py",
           "module": {
             "name": "glax-weather"
           },
+          "name": "py",
           "srcfeature": false,
+          "title": "Python"
+        },
+        "rb": {
+          "active": true,
+          "comment": {
+            "line": "#"
+          },
           "deps": {
-            "voxgig-struct": {
-              "active": true,
-              "version": "0.0.10",
-              "kind": "prod"
-            },
             "json": {
               "active": true,
-              "version": "0",
-              "kind": "prod"
+              "kind": "prod",
+              "version": "0"
+            },
+            "voxgig-struct": {
+              "active": true,
+              "kind": "prod",
+              "version": "0.0.10"
             }
           },
+          "ext": "rb",
+          "module": {
+            "name": "glax-weather"
+          },
           "name": "rb",
-          "active": true
+          "srcfeature": false,
+          "title": "Ruby"
+        },
+        "ts": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "//"
+          },
+          "deps": {
+            "@types/node": {
+              "active": true,
+              "kind": "dev",
+              "version": "^25.6.0"
+            },
+            "dotenv": {
+              "active": true,
+              "kind": "dev",
+              "version": "^17.4.2"
+            },
+            "typescript": {
+              "active": true,
+              "kind": "dev",
+              "version": "^5.9.3"
+            }
+          },
+          "ext": "ts",
+          "module": {
+            "name": "glax-weather"
+          },
+          "name": "ts",
+          "title": "TypeScript"
         }
-      },
-      "option": {}
-    },
-    "def": {
-      "desc": ""
+      }
     }
-  }
+  },
+  "name": "glax-weather",
+  "origin": "voxgig-sdk"
 }
