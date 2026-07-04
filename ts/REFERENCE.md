@@ -109,7 +109,7 @@ Alias for `GlaxWeatherSDK.test()`.
 ## WeatherEntity
 
 ```ts
-const weather = client.weather
+const weather = client.Weather()
 ```
 
 ### Fields
@@ -129,7 +129,7 @@ const weather = client.weather
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.weather.list()
+const results = await client.Weather().list()
 ```
 
 #### `load(match: object, ctrl?: object)`
@@ -137,7 +137,7 @@ const results = await client.weather.list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.weather.load({ id: 'weather_id' })
+const result = await client.Weather().load({ id: 'weather_id' })
 ```
 
 ### Common Methods

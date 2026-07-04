@@ -208,13 +208,7 @@ class GlaxWeatherSDK
   end
 
 
-  # Idiomatic facade: client.weather.list / client.weather.load({ "id" => ... })
-  def weather
-    require_relative 'entity/weather_entity'
-    @weather ||= WeatherEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.weather instead.
+  # Canonical facade: client.Weather.list / client.Weather.load({ "id" => ... })
   def Weather(data = nil)
     require_relative 'entity/weather_entity'
     WeatherEntity.new(self, data)

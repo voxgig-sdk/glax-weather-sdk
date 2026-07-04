@@ -31,24 +31,28 @@ from glaxweather_sdk import GlaxWeatherSDK
 client = GlaxWeatherSDK()
 ```
 
-### 2. List weathers
+### 2. List weather records
+
+`list()` returns a `list` of records (each a `dict`) and raises on
+error — iterate it directly.
 
 ```python
 try:
-    result = client.weather.list()
-    for item in result:
-        d = item.data_get()
-        print(d["id"], d["name"])
+    weathers = client.Weather().list({})
+    for weather in weathers:
+        print(weather)
 except Exception as err:
     print(f"list failed: {err}")
 ```
 
 ### 3. Load a weather
 
+`load()` returns the bare record (a `dict`) and raises on error.
+
 ```python
 try:
-    result = client.weather.load({"id": "example_id"})
-    print(result)
+    weather = client.Weather().load({"id": "example_id"})
+    print(weather)
 except Exception as err:
     print(f"load failed: {err}")
 ```
@@ -96,8 +100,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = GlaxWeatherSDK.test()
 
-result = client.weather.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+weather = client.Weather().load({"id": "test01"})
+# weather contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -234,7 +239,7 @@ API path: `/glax_weather.json`
 
 ### Weather
 
-Create an instance: `const weather = client.weather`
+Create an instance: `weather = client.Weather()`
 
 #### Operations
 
@@ -255,14 +260,14 @@ Create an instance: `const weather = client.weather`
 
 #### Example: Load
 
-```ts
-const weather = await client.weather.load({ id: 'weather_id' })
+```python
+weather = client.Weather().load({"id": "weather_id"})
 ```
 
 #### Example: List
 
-```ts
-const weathers = await client.weather.list()
+```python
+weathers = client.Weather().list({})
 ```
 
 
@@ -336,7 +341,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-weather = client.weather
+weather = client.Weather()
 weather.load({"id": "example_id"})
 
 # weather.data_get() now returns the loaded weather data

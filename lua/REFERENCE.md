@@ -83,7 +83,7 @@ same parameters as `direct()`.
 ## WeatherEntity
 
 ```lua
-local weather = client:weather(nil)
+local weather = client:Weather(nil)
 ```
 
 ### Fields
@@ -103,7 +103,7 @@ local weather = client:weather(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:weather():list()
+local results, err = client:Weather():list()
 ```
 
 #### `load(reqmatch, ctrl) -> any, err`
@@ -111,7 +111,7 @@ local results, err = client:weather():list()
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:weather():load({ id = "weather_id" })
+local result, err = client:Weather():load({ id = "weather_id" })
 ```
 
 ### Common Methods

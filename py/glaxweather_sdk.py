@@ -220,25 +220,15 @@ class GlaxWeatherSDK:
         }
 
 
-    @property
-    def weather(self):
-        """Idiomatic facade: client.weather.list() / client.weather.load({"id": ...})."""
-        from entity.weather_entity import WeatherEntity
-        cached = getattr(self, "_weather", None)
-        if cached is None:
-            cached = WeatherEntity(self, None)
-            self._weather = cached
-        return cached
-
-    def Weather(self, data=None):
-        # Deprecated: use client.weather instead.
+    def Weather(self, data=None) -> "WeatherEntity":
+        """Entity factory: client.Weather().list({}) / client.Weather().load({"id": ...})."""
         from entity.weather_entity import WeatherEntity
         return WeatherEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "GlaxWeatherSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -258,3 +248,9 @@ class GlaxWeatherSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.weather_entity import WeatherEntity

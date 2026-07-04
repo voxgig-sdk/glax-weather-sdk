@@ -204,14 +204,7 @@ class GlaxWeatherSDK {
 
 
 
-  _weather?: WeatherEntity
-
-  // Idiomatic facade: `client.weather.list()` / `client.weather.load({ id })`.
-  get weather(): WeatherEntity {
-    return (this._weather ??= new WeatherEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.weather` instead. */
+  // Entity access: `client.Weather().list()` / `client.Weather().load({ id })`.
   Weather(data?: any) {
     const self = this
     return new WeatherEntity(self,data)

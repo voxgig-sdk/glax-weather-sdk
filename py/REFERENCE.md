@@ -80,7 +80,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## WeatherEntity
 
 ```python
-weather = client.weather
+weather = client.Weather()
 ```
 
 ### Fields
@@ -100,7 +100,9 @@ weather = client.weather
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.weather.list({})
+results = client.Weather().list({})
+for weather in results:
+    print(weather)
 ```
 
 #### `load(reqmatch, ctrl=None) -> dict`
@@ -108,7 +110,7 @@ results = client.weather.list({})
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.weather.load({"id": "weather_id"})
+result = client.Weather().load({"id": "weather_id"})
 ```
 
 ### Common Methods

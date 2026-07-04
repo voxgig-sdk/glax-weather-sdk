@@ -86,7 +86,7 @@ same parameters as `direct()`. Raises on error.
 ## WeatherEntity
 
 ```ruby
-weather = client.weather
+weather = client.Weather
 ```
 
 ### Fields
@@ -106,7 +106,7 @@ weather = client.weather
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.weather.list(nil)
+results = client.Weather.list(nil)
 ```
 
 #### `load(reqmatch, ctrl = nil) -> result`
@@ -114,7 +114,7 @@ results = client.weather.list(nil)
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.weather.load({ "id" => "weather_id" })
+result = client.Weather.load({ "id" => "weather_id" })
 ```
 
 ### Common Methods

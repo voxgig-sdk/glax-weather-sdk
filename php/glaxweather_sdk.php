@@ -233,10 +233,10 @@ class GlaxWeatherSDK
 
     private $_weather = null;
 
-    // Idiomatic facade: $client->weather()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Weather() (PHP method
-    // names are case-insensitive).
-    public function weather($data = null)
+    // Canonical facade: $client->Weather()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->weather()
+    // resolves here too.
+    public function Weather($data = null)
     {
         require_once __DIR__ . '/entity/weather_entity.php';
         if ($data === null) {

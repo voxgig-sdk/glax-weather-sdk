@@ -28,16 +28,14 @@ require_relative "GlaxWeather_sdk"
 client = GlaxWeatherSDK.new
 ```
 
-### 2. List weathers
+### 2. List weather records
 
 ```ruby
 begin
-  result = client.weather.list
-  if result.is_a?(Array)
-    result.each do |item|
-      d = item.data_get
-      puts "#{d["id"]} #{d["name"]}"
-    end
+  # list returns an Array of Weather records — iterate directly.
+  weathers = client.Weather.list
+  weathers.each do |item|
+    puts "#{item["id"]} #{item["name"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -48,8 +46,9 @@ end
 
 ```ruby
 begin
-  result = client.weather.load({ "id" => "example_id" })
-  puts result
+  # load returns the bare Weather record (raises on error).
+  weather = client.Weather.load({ "id" => "example_id" })
+  puts weather
 rescue => err
   warn "load failed: #{err}"
 end
@@ -96,13 +95,17 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
-client = GlaxWeatherSDK.test
+client = GlaxWeatherSDK.test({
+  "entity" => { "weather" => { "test01" => { "id" => "test01" } } },
+})
 
-result = client.weather.load({ "id" => "test01" })
-# result contains mock response data
+# load returns the bare mock record (raises on error).
+weather = client.Weather.load({ "id" => "test01" })
+puts weather
 ```
 
 ### Use a custom fetch function
@@ -238,7 +241,7 @@ API path: `/glax_weather.json`
 
 ### Weather
 
-Create an instance: `const weather = client.weather`
+Create an instance: `weather = client.Weather`
 
 #### Operations
 
@@ -259,14 +262,16 @@ Create an instance: `const weather = client.weather`
 
 #### Example: Load
 
-```ts
-const weather = await client.weather.load({ id: 'weather_id' })
+```ruby
+# load returns the bare Weather record (raises on error).
+weather = client.Weather.load({ "id" => "weather_id" })
 ```
 
 #### Example: List
 
-```ts
-const weathers = await client.weather.list()
+```ruby
+# list returns an Array of Weather records (raises on error).
+weathers = client.Weather.list
 ```
 
 
@@ -341,7 +346,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-weather = client.weather
+weather = client.Weather
 weather.load({ "id" => "example_id" })
 
 # weather.data_get now returns the loaded weather data
