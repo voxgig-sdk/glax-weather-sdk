@@ -2,6 +2,8 @@
 
 import { WeatherEntity } from './entity/WeatherEntity'
 
+export type * from './GlaxWeatherTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -202,6 +204,14 @@ class GlaxWeatherSDK {
 
 
 
+  _weather?: WeatherEntity
+
+  // Idiomatic facade: `client.weather.list()` / `client.weather.load({ id })`.
+  get weather(): WeatherEntity {
+    return (this._weather ??= new WeatherEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.weather` instead. */
   Weather(data?: any) {
     const self = this
     return new WeatherEntity(self,data)

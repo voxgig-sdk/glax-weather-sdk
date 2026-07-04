@@ -135,14 +135,12 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'GLAXWEATHER_TEST_WEATHER_ENTID': {},
     'GLAXWEATHER_TEST_LIVE': 'FALSE',
-    'GLAXWEATHER_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.GLAXWEATHER_TEST_LIVE
 
   if (live) {
     const client = new GlaxWeatherSDK({
-      apikey: env.GLAXWEATHER_APIKEY,
     })
 
     let idmap: any = env['GLAXWEATHER_TEST_WEATHER_ENTID']

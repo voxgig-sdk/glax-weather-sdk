@@ -50,14 +50,12 @@ class WeatherEntityTest extends TestCase
         $weather_ref01_ent = $client->Weather(null);
         $weather_ref01_match = [];
 
-        [$weather_ref01_list_result, $err] = $weather_ref01_ent->list($weather_ref01_match, null);
-        $this->assertNull($err);
+        $weather_ref01_list_result = $weather_ref01_ent->list($weather_ref01_match, null);
         $this->assertIsArray($weather_ref01_list_result);
 
         // LOAD
         $weather_ref01_match_dt0 = [];
-        [$weather_ref01_data_dt0_loaded, $err] = $weather_ref01_ent->load($weather_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $weather_ref01_data_dt0_loaded = $weather_ref01_ent->load($weather_ref01_match_dt0, null);
         $this->assertNotNull($weather_ref01_data_dt0_loaded);
 
     }
@@ -92,7 +90,6 @@ function weather_basic_setup($extra)
         "GLAXWEATHER_TEST_WEATHER_ENTID" => $idmap,
         "GLAXWEATHER_TEST_LIVE" => "FALSE",
         "GLAXWEATHER_TEST_EXPLAIN" => "FALSE",
-        "GLAXWEATHER_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -104,7 +101,6 @@ function weather_basic_setup($extra)
     if ($env["GLAXWEATHER_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["GLAXWEATHER_APIKEY"],
             ],
             $extra ?? [],
         ]);

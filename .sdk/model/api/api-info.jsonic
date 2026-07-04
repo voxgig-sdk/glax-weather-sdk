@@ -4,6 +4,7 @@
 main: {
   kit: {
     info: {
+      auth: false
       contact: {
         name: "Mattia Basaglia"
         url: "https://dragon.best"

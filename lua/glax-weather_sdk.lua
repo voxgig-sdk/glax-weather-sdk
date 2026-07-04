@@ -244,6 +244,19 @@ end
 
 
 
+-- Idiomatic facade: client:weather():list() / client:weather():load({ id = ... })
+function GlaxWeatherSDK:weather(data)
+  local EntityMod = require("entity.weather_entity")
+  if data == nil then
+    if self._weather == nil then
+      self._weather = EntityMod.new(self, nil)
+    end
+    return self._weather
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:weather() instead.
 function GlaxWeatherSDK:Weather(data)
   local EntityMod = require("entity.weather_entity")
   return EntityMod.new(self, data)

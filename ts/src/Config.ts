@@ -38,10 +38,6 @@ class Config {
   options = {
     base: 'https://dragon.best/api',
 
-    auth: {
-      prefix: 'Bearer',
-    },
-
     headers: {
       "content-type": "application/json"
     },

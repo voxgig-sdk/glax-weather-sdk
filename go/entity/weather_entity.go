@@ -85,6 +85,27 @@ func (e *WeatherEntity) Match(args ...any) any {
 	return out
 }
 
+// DataTyped is the statically-typed accessor for this entity's data. With no
+// argument it returns the current data as an Weather; with an argument it
+// sets the data and returns the stored value. It delegates to the untyped Data
+// (identical runtime) and converts at the typed boundary.
+func (e *WeatherEntity) DataTyped(data ...Weather) Weather {
+	if len(data) > 0 {
+		return typedFrom[Weather](e.Data(asMap(data[0])))
+	}
+	return typedFrom[Weather](e.Data())
+}
+
+// MatchTyped mirrors DataTyped for the entity's match filter. The match is a
+// partial of the entity, so it round-trips through Weather (all fields
+// optional at the wire level).
+func (e *WeatherEntity) MatchTyped(match ...Weather) Weather {
+	if len(match) > 0 {
+		return typedFrom[Weather](e.Match(asMap(match[0])))
+	}
+	return typedFrom[Weather](e.Match())
+}
+
 
 func (e *WeatherEntity) Load(reqmatch map[string]any, ctrl map[string]any) (any, error) {
 	utility := e.utility
@@ -111,6 +132,17 @@ func (e *WeatherEntity) Load(reqmatch map[string]any, ctrl map[string]any) (any,
 	})
 }
 
+// LoadTyped is the statically-typed variant of Load: it takes an
+// WeatherLoadMatch and returns an Weather. It delegates to the untyped
+// Load (identical runtime) and converts at the typed boundary.
+func (e *WeatherEntity) LoadTyped(reqmatch WeatherLoadMatch, ctrl map[string]any) (Weather, error) {
+	res, err := e.Load(asMap(reqmatch), ctrl)
+	if err != nil {
+		return Weather{}, err
+	}
+	return typedFrom[Weather](res), nil
+}
+
 
 
 
@@ -131,6 +163,17 @@ func (e *WeatherEntity) List(reqmatch map[string]any, ctrl map[string]any) (any,
 			}
 		}
 	})
+}
+
+// ListTyped is the statically-typed variant of List: it takes an
+// WeatherListMatch and returns []Weather. It delegates to the untyped
+// List (identical runtime) and converts at the typed boundary.
+func (e *WeatherEntity) ListTyped(reqmatch WeatherListMatch, ctrl map[string]any) ([]Weather, error) {
+	res, err := e.List(asMap(reqmatch), ctrl)
+	if err != nil {
+		return nil, err
+	}
+	return typedSliceFrom[Weather](res), nil
 }
 
 

@@ -245,6 +245,9 @@ func (sdk *GlaxWeatherSDK) Direct(fetchargs map[string]any) (map[string]any, err
 }
 
 
+// Weather returns a Weather entity bound to this client.
+// Idiomatic usage: client.Weather(nil).List(nil, nil) or
+// client.Weather(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *GlaxWeatherSDK) Weather(data map[string]any) GlaxWeatherEntity {
 	return NewWeatherEntityFunc(sdk, data)
 }

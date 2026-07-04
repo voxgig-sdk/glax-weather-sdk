@@ -14,9 +14,14 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  Weather,
+  WeatherLoadMatch,
+  WeatherListMatch,
+} from '../GlaxWeatherTypes'
 
 // TODO: needs Entity superclass
-class WeatherEntity extends GlaxWeatherEntityBase {
+class WeatherEntity extends GlaxWeatherEntityBase<Weather> {
 
   constructor(client: GlaxWeatherSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +37,7 @@ class WeatherEntity extends GlaxWeatherEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: WeatherLoadMatch, ctrl?: Control): Promise<Weather> {
 
     const utility = this._utility
 
@@ -136,14 +141,16 @@ class WeatherEntity extends GlaxWeatherEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<Weather> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }
 
 
 
-  async list(this: any, reqmatch?: any, ctrl?: Control) {
+  async list(this: any, reqmatch?: WeatherListMatch, ctrl?: Control): Promise<Weather[]> {
 
     const utility = this._utility
 
@@ -243,7 +250,9 @@ class WeatherEntity extends GlaxWeatherEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<Weather[]> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

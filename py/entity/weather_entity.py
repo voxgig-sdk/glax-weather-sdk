@@ -1,7 +1,14 @@
 # GlaxWeather SDK Weather entity
 
+from __future__ import annotations
+
 from utility.voxgig_struct import voxgig_struct as vs
 from core import helpers
+from glaxweather_types import (
+    Weather,
+    WeatherLoadMatch,
+    WeatherListMatch,
+)
 
 
 class WeatherEntity:
@@ -44,7 +51,7 @@ class WeatherEntity:
             self._data = helpers.to_map(vs.clone(args)) or {}
             self._utility.feature_hook(self._entctx, "SetData")
 
-    def data_get(self):
+    def data_get(self) -> Weather:
         self._utility.feature_hook(self._entctx, "GetData")
         return vs.clone(self._data)
 
@@ -53,12 +60,12 @@ class WeatherEntity:
             self._match = helpers.to_map(vs.clone(args)) or {}
             self._utility.feature_hook(self._entctx, "SetMatch")
 
-    def match_get(self):
+    def match_get(self) -> Weather:
         self._utility.feature_hook(self._entctx, "GetMatch")
         return vs.clone(self._match)
 
     
-    def load(self, reqmatch, ctrl=None):
+    def load(self, reqmatch: WeatherLoadMatch, ctrl=None) -> Weather:
         utility = self._utility
         ctx = utility.make_context({
             "opname": "load",
@@ -80,7 +87,7 @@ class WeatherEntity:
 
 
     
-    def list(self, reqmatch, ctrl=None):
+    def list(self, reqmatch: WeatherListMatch, ctrl=None) -> list[Weather]:
         utility = self._utility
         ctx = utility.make_context({
             "opname": "list",
