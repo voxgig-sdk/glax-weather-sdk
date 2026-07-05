@@ -17,8 +17,7 @@ type Weather struct {
 	Unit *string `json:"unit,omitempty"`
 }
 
-// WeatherLoadMatch mirrors the weather fields as an all-optional match
-// filter (Go analog of Partial<Weather>).
+// WeatherLoadMatch is the typed request payload for Weather.LoadTyped.
 type WeatherLoadMatch struct {
 	Condition *string `json:"condition,omitempty"`
 	Forecast *[]any `json:"forecast,omitempty"`
@@ -27,8 +26,7 @@ type WeatherLoadMatch struct {
 	Unit *string `json:"unit,omitempty"`
 }
 
-// WeatherListMatch mirrors the weather fields as an all-optional match
-// filter (Go analog of Partial<Weather>).
+// WeatherListMatch is the typed request payload for Weather.ListTyped.
 type WeatherListMatch struct {
 	Condition *string `json:"condition,omitempty"`
 	Forecast *[]any `json:"forecast,omitempty"`

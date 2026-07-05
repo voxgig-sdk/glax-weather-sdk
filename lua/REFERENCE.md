@@ -90,11 +90,11 @@ local weather = client:Weather(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `condition` | ``$STRING`` | No |  |
-| `forecast` | ``$ARRAY`` | No |  |
-| `location` | ``$STRING`` | No |  |
-| `temperature` | ``$NUMBER`` | No |  |
-| `unit` | ``$STRING`` | No |  |
+| `condition` | `string` | No |  |
+| `forecast` | `table` | No |  |
+| `location` | `string` | No |  |
+| `temperature` | `number` | No |  |
+| `unit` | `string` | No |  |
 
 ### Operations
 
@@ -111,7 +111,7 @@ local results, err = client:Weather():list()
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Weather():load({ id = "weather_id" })
+local result, err = client:Weather():load()
 ```
 
 ### Common Methods

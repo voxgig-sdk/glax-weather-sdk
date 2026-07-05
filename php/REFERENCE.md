@@ -8,7 +8,7 @@ Complete API reference for the GlaxWeather PHP SDK.
 ### Constructor
 
 ```php
-require_once __DIR__ . '/glax-weather_sdk.php';
+require_once __DIR__ . '/glaxweather_sdk.php';
 
 $client = new GlaxWeatherSDK($options);
 ```
@@ -45,11 +45,11 @@ $client = GlaxWeatherSDK::test();
 
 Create a new `WeatherEntity` instance. Pass `null` for no initial data.
 
-#### `optionsMap(): array`
+#### `options_map(): array`
 
 Return a deep copy of the current SDK options.
 
-#### `getUtility(): ProjectNameUtility`
+#### `get_utility(): GlaxWeatherUtility`
 
 Return a copy of the SDK utility object.
 
@@ -92,20 +92,20 @@ $weather = $client->Weather();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `condition` | ``$STRING`` | No |  |
-| `forecast` | ``$ARRAY`` | No |  |
-| `location` | ``$STRING`` | No |  |
-| `temperature` | ``$NUMBER`` | No |  |
-| `unit` | ``$STRING`` | No |  |
+| `condition` | `string` | No |  |
+| `forecast` | `array` | No |  |
+| `location` | `string` | No |  |
+| `temperature` | `float` | No |  |
+| `unit` | `string` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Weather()->list([]);
+$results = $client->Weather()->list();
 ```
 
 #### `load(array $reqmatch, ?array $ctrl = null): mixed`
@@ -113,24 +113,24 @@ $results = $client->Weather()->list([]);
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->Weather()->load(["id" => "weather_id"]);
+$result = $client->Weather()->load();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -139,7 +139,7 @@ Set the entity match criteria.
 Create a new `WeatherEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 

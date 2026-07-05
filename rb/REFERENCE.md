@@ -8,7 +8,7 @@ Complete API reference for the GlaxWeather Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'glax-weather_sdk'
+require_relative 'GlaxWeather_sdk'
 
 client = GlaxWeatherSDK.new(options)
 ```
@@ -93,20 +93,20 @@ weather = client.Weather
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `condition` | ``$STRING`` | No |  |
-| `forecast` | ``$ARRAY`` | No |  |
-| `location` | ``$STRING`` | No |  |
-| `temperature` | ``$NUMBER`` | No |  |
-| `unit` | ``$STRING`` | No |  |
+| `condition` | `String` | No |  |
+| `forecast` | `Array` | No |  |
+| `location` | `String` | No |  |
+| `temperature` | `Float` | No |  |
+| `unit` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Weather.list(nil)
+results = client.Weather.list
 ```
 
 #### `load(reqmatch, ctrl = nil) -> result`
@@ -114,7 +114,7 @@ results = client.Weather.list(nil)
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.Weather.load({ "id" => "weather_id" })
+result = client.Weather.load()
 ```
 
 ### Common Methods

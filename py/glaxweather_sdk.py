@@ -221,7 +221,7 @@ class GlaxWeatherSDK:
 
 
     def Weather(self, data=None) -> "WeatherEntity":
-        """Entity factory: client.Weather().list({}) / client.Weather().load({"id": ...})."""
+        """Entity factory: client.Weather().list() / client.Weather().load({"id": ...})."""
         from entity.weather_entity import WeatherEntity
         return WeatherEntity(self, data)
 

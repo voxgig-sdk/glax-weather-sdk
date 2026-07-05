@@ -22,7 +22,7 @@ class Weather
     public ?string $unit = null;
 }
 
-/** Match filter for Weather#load (any subset of Weather fields). */
+/** Request payload for Weather#load. */
 class WeatherLoadMatch
 {
     public ?string $condition = null;
@@ -32,7 +32,7 @@ class WeatherLoadMatch
     public ?string $unit = null;
 }
 
-/** Match filter for Weather#list (any subset of Weather fields). */
+/** Request payload for Weather#list. */
 class WeatherListMatch
 {
     public ?string $condition = null;

@@ -97,11 +97,11 @@ weather := client.Weather(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `condition` | ``$STRING`` | No |  |
-| `forecast` | ``$ARRAY`` | No |  |
-| `location` | ``$STRING`` | No |  |
-| `temperature` | ``$NUMBER`` | No |  |
-| `unit` | ``$STRING`` | No |  |
+| `condition` | `string` | No |  |
+| `forecast` | `[]any` | No |  |
+| `location` | `string` | No |  |
+| `temperature` | `float64` | No |  |
+| `unit` | `string` | No |  |
 
 ### Operations
 
@@ -118,7 +118,7 @@ results, err := client.Weather(nil).List(nil, nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.Weather(nil).Load(map[string]any{"id": "weather_id"}, nil)
+result, err := client.Weather(nil).Load(nil, nil)
 ```
 
 ### Common Methods

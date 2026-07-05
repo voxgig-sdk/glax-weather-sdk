@@ -13,7 +13,19 @@ export interface Weather {
   unit?: string
 }
 
-export type WeatherLoadMatch = Partial<Weather>
+export interface WeatherLoadMatch {
+  condition?: string
+  forecast?: any[]
+  location?: string
+  temperature?: number
+  unit?: string
+}
 
-export type WeatherListMatch = Partial<Weather>
+export interface WeatherListMatch {
+  condition?: string
+  forecast?: any[]
+  location?: string
+  temperature?: number
+  unit?: string
+}
 

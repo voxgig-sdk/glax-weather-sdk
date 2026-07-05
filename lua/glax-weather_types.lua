@@ -14,8 +14,18 @@
 ---@field unit? string
 
 ---@class WeatherLoadMatch
+---@field condition? string
+---@field forecast? table
+---@field location? string
+---@field temperature? number
+---@field unit? string
 
 ---@class WeatherListMatch
+---@field condition? string
+---@field forecast? table
+---@field location? string
+---@field temperature? number
+---@field unit? string
 
 local M = {}
 

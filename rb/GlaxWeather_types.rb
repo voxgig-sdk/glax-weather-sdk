@@ -33,7 +33,7 @@ Weather = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Weather#load (any subset of Weather fields).
+# Request payload for Weather#load.
 #
 # @!attribute [rw] condition
 #   @return [String, nil]
@@ -58,7 +58,7 @@ WeatherLoadMatch = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Weather#list (any subset of Weather fields).
+# Request payload for Weather#list.
 #
 # @!attribute [rw] condition
 #   @return [String, nil]

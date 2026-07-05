@@ -116,11 +116,11 @@ const weather = client.Weather()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `condition` | ``$STRING`` | No |  |
-| `forecast` | ``$ARRAY`` | No |  |
-| `location` | ``$STRING`` | No |  |
-| `temperature` | ``$NUMBER`` | No |  |
-| `unit` | ``$STRING`` | No |  |
+| `condition` | `string` | No |  |
+| `forecast` | `any[]` | No |  |
+| `location` | `string` | No |  |
+| `temperature` | `number` | No |  |
+| `unit` | `string` | No |  |
 
 ### Operations
 
@@ -137,7 +137,7 @@ const results = await client.Weather().list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Weather().load({ id: 'weather_id' })
+const result = await client.Weather().load()
 ```
 
 ### Common Methods

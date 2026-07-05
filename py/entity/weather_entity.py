@@ -65,8 +65,13 @@ class WeatherEntity:
         return vs.clone(self._match)
 
     
-    def load(self, reqmatch: WeatherLoadMatch, ctrl=None) -> Weather:
+    def load(self, reqmatch=None, ctrl=None) -> Weather:
         utility = self._utility
+        # reqmatch is optional: an entity with no id-like key loads with no
+        # match. Treat None as an empty match so client.Weather().load()
+        # works with no args.
+        if reqmatch is None:
+            reqmatch = {}
         ctx = utility.make_context({
             "opname": "load",
             "ctrl": ctrl,
@@ -87,8 +92,12 @@ class WeatherEntity:
 
 
     
-    def list(self, reqmatch: WeatherListMatch, ctrl=None) -> list[Weather]:
+    def list(self, reqmatch=None, ctrl=None) -> list[Weather]:
         utility = self._utility
+        # reqmatch is optional: an omitted match lists all records. Treat None
+        # as an empty match so client.Weather().list() works with no args.
+        if reqmatch is None:
+            reqmatch = {}
         ctx = utility.make_context({
             "opname": "list",
             "ctrl": ctrl,
