@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -369,14 +366,17 @@
           "name": "CC BY-SA",
           "url": "https://creativecommons.org/licenses/by-sa/4.0/"
         },
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "Production server",
             "url": "https://dragon.best/api"
           }
         ],
+        "summary": "This API provides current weather data for a specified location, presenting information visually through Glax.",
         "title": "Glax Weather API",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "website": "https://dragon.best"
       },
       "option": {},
       "target": {
@@ -429,6 +429,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -479,6 +482,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },

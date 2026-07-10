@@ -20,9 +20,9 @@ main: {
           url: "https://dragon.best/api"
         }
       ]
+      summary: "This API provides current weather data for a specified location, presenting information visually through Glax."
       title: "Glax Weather API"
       version: "1.0.0"
+      website: "https://dragon.best"
     }
   }
-}
-

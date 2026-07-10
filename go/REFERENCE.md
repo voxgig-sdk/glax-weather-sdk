@@ -91,6 +91,7 @@ same parameters as `Direct()`.
 
 ```go
 weather := client.Weather(nil)
+fmt.Println(weather.GetName()) // "weather"
 ```
 
 ### Fields
@@ -111,6 +112,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.Weather(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 #### `Load(reqmatch, ctrl map[string]any) (any, error)`
@@ -119,6 +124,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.Weather(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
