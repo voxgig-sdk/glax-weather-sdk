@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- GlaxWeather SDK exists test
 
 local sdk = require("glax-weather_sdk")
 
