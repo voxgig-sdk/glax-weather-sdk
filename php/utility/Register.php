@@ -23,6 +23,7 @@ require_once __DIR__ . '/MakeUrl.php';
 require_once __DIR__ . '/Param.php';
 require_once __DIR__ . '/PrepareAuth.php';
 require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
 require_once __DIR__ . '/PrepareHeaders.php';
 require_once __DIR__ . '/PrepareMethod.php';
 require_once __DIR__ . '/PrepareParams.php';
@@ -59,6 +60,8 @@ GlaxWeatherUtility::setRegistrar(function (GlaxWeatherUtility $u): void {
     $u->prepare_params = [GlaxWeatherPrepareParams::class, 'call'];
     $u->prepare_path = [GlaxWeatherPreparePath::class, 'call'];
     $u->prepare_query = [GlaxWeatherPrepareQuery::class, 'call'];
+    $u->graphql_body = [GlaxWeatherGraphql::class, 'body'];
+    $u->graphql_errors = [GlaxWeatherGraphql::class, 'errors'];
     $u->result_basic = [GlaxWeatherResultBasic::class, 'call'];
     $u->result_body = [GlaxWeatherResultBody::class, 'call'];
     $u->result_headers = [GlaxWeatherResultHeaders::class, 'call'];

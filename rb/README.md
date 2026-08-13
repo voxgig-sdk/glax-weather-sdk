@@ -37,7 +37,7 @@ begin
   # list returns an Array of Weather records — iterate directly.
   weathers = client.Weather.list
   weathers.each do |item|
-    puts "#{item["condition"]}"
+    puts "#{item["conditions"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -48,7 +48,7 @@ end
 
 ```ruby
 begin
-  # load returns the bare Weather record (raises on error).
+  # load returns the ENTITY — call data_get for the Weather record (raises on error).
   weather = client.Weather.load()
   puts weather
 rescue => err
@@ -131,7 +131,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = GlaxWeatherSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 weather = client.Weather.list()
 puts weather
 ```
@@ -249,11 +250,11 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `condition` |  |
+| `conditions` |  |
 | `forecast` |  |
 | `location` |  |
 | `temperature` |  |
-| `unit` |  |
+| `units` |  |
 
 Operations: List, Load.
 
@@ -279,16 +280,16 @@ Create an instance: `weather = client.Weather`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `condition` | `String` |  |
+| `conditions` | `String` |  |
 | `forecast` | `Array` |  |
 | `location` | `String` |  |
 | `temperature` | `Float` |  |
-| `unit` | `String` |  |
+| `units` | `String` |  |
 
 #### Example: Load
 
 ```ruby
-# load returns the bare Weather record (raises on error).
+# load returns the ENTITY — call data_get for the Weather record (raises on error).
 weather = client.Weather.load()
 ```
 

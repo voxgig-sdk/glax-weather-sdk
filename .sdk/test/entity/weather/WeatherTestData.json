@@ -2,27 +2,27 @@
   "existing": {
     "weather": {
       "WEATHER00": {
-        "condition": "s32",
+        "conditions": "s32",
         "forecast": [],
         "location": "s34",
         "temperature": 53,
-        "unit": "s36",
+        "units": "s36",
         "id": "WEATHER00"
       },
       "WEATHER01": {
-        "condition": "s64",
+        "conditions": "s64",
         "forecast": [],
         "location": "s66",
         "temperature": 103,
-        "unit": "s68",
+        "units": "s68",
         "id": "WEATHER01"
       },
       "WEATHER02": {
-        "condition": "s96",
+        "conditions": "s96",
         "forecast": [],
         "location": "s98",
         "temperature": 153,
-        "unit": "s9a",
+        "units": "s9a",
         "id": "WEATHER02"
       }
     }
@@ -30,11 +30,11 @@
   "new": {
     "weather": {
       "weather_ref01": {
-        "condition": "sc8",
+        "conditions": "sc8",
         "forecast": [],
         "location": "sca",
         "temperature": 203,
-        "unit": "scc"
+        "units": "scc"
       }
     }
   }

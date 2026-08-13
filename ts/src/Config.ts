@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'GlaxWeather',
   }
 
 
@@ -56,7 +56,7 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "condition",
+          "name": "conditions",
           "req": false,
           "type": "`$STRING`",
           "index$": 0
@@ -84,7 +84,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "unit",
+          "name": "units",
           "req": false,
           "type": "`$STRING`",
           "index$": 4
@@ -146,6 +146,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/glax_weather.json",
               "parts": [
@@ -162,7 +163,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.forecast`"
               },
               "index$": 0
             }
@@ -223,6 +224,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/glax_weather.png",
               "parts": [

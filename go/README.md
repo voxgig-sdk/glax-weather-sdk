@@ -269,11 +269,11 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"condition"` |  |
+| `"conditions"` |  |
 | `"forecast"` |  |
 | `"location"` |  |
 | `"temperature"` |  |
-| `"unit"` |  |
+| `"units"` |  |
 
 Operations: List, Load.
 
@@ -299,11 +299,11 @@ Create an instance: `weather := client.Weather(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `condition` | `string` |  |
+| `conditions` | `string` |  |
 | `forecast` | `[]any` |  |
 | `location` | `string` |  |
 | `temperature` | `float64` |  |
-| `unit` | `string` |  |
+| `units` | `string` |  |
 
 #### Example: Load
 

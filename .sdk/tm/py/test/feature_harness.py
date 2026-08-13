@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import GlaxWeatherControl
-from core.error import GlaxWeatherError
-from core.result import GlaxWeatherResult
-from core.spec import GlaxWeatherSpec
+from projectname_sdk.config import make_config
+from projectname_sdk.features import _make_feature
+from projectname_sdk.core.control import GlaxWeatherControl
+from projectname_sdk.core.error import GlaxWeatherError
+from projectname_sdk.core.result import GlaxWeatherResult
+from projectname_sdk.core.spec import GlaxWeatherSpec
 
 
 # True when this SDK was generated with the named feature.

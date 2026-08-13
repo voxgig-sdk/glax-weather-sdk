@@ -27,7 +27,7 @@ module GlaxWeatherConfig
           "fields" => [
             {
               "active" => true,
-              "name" => "condition",
+              "name" => "conditions",
               "req" => false,
               "type" => "`$STRING`",
               "index$" => 0,
@@ -55,7 +55,7 @@ module GlaxWeatherConfig
             },
             {
               "active" => true,
-              "name" => "unit",
+              "name" => "units",
               "req" => false,
               "type" => "`$STRING`",
               "index$" => 4,
@@ -117,6 +117,7 @@ module GlaxWeatherConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/glax_weather.json",
                   "parts" => [
@@ -133,7 +134,7 @@ module GlaxWeatherConfig
                   },
                   "transform" => {
                     "req" => "`reqdata`",
-                    "res" => "`body`",
+                    "res" => "`body.forecast`",
                   },
                   "index$" => 0,
                 },
@@ -194,6 +195,7 @@ module GlaxWeatherConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/glax_weather.png",
                   "parts" => [

@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import GlaxWeatherSDK
-from core.error import GlaxWeatherError
-from core.result import GlaxWeatherResult
-from core.response import GlaxWeatherResponse
-from core.spec import GlaxWeatherSpec
-from feature.base_feature import GlaxWeatherBaseFeature
+from projectname_sdk.core.error import GlaxWeatherError
+from projectname_sdk.core.result import GlaxWeatherResult
+from projectname_sdk.core.response import GlaxWeatherResponse
+from projectname_sdk.core.spec import GlaxWeatherSpec
+from projectname_sdk.feature.base_feature import GlaxWeatherBaseFeature
 
 
 def _client():

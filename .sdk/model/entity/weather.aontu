@@ -6,7 +6,7 @@ main: kit: entity: weather: {
 
   fields: [
     {
-      name: "condition"
+      name: "conditions"
       req: false
       type: "`$STRING`"
     }
@@ -26,7 +26,7 @@ main: kit: entity: weather: {
       type: "`$NUMBER`"
     }
     {
-      name: "unit"
+      name: "units"
       req: false
       type: "`$STRING`"
     }
@@ -97,7 +97,7 @@ main: kit: entity: weather: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.forecast`"
           }
         }
       ]

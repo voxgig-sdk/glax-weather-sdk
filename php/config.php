@@ -32,7 +32,7 @@ class GlaxWeatherConfig
           'fields' => [
             [
               'active' => true,
-              'name' => 'condition',
+              'name' => 'conditions',
               'req' => false,
               'type' => '`$STRING`',
               'index$' => 0,
@@ -60,7 +60,7 @@ class GlaxWeatherConfig
             ],
             [
               'active' => true,
-              'name' => 'unit',
+              'name' => 'units',
               'req' => false,
               'type' => '`$STRING`',
               'index$' => 4,
@@ -122,6 +122,7 @@ class GlaxWeatherConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/glax_weather.json',
                   'parts' => [
@@ -138,7 +139,7 @@ class GlaxWeatherConfig
                   ],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body`',
+                    'res' => '`body.forecast`',
                   ],
                   'index$' => 0,
                 ],
@@ -199,6 +200,7 @@ class GlaxWeatherConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/glax_weather.png',
                   'parts' => [

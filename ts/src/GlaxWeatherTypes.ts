@@ -6,26 +6,26 @@
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 
 export interface Weather {
-  condition?: string
+  conditions?: string
   forecast?: any[]
   location?: string
   temperature?: number
-  unit?: string
+  units?: string
 }
 
 export interface WeatherLoadMatch {
-  condition?: string
+  conditions?: string
   forecast?: any[]
   location?: string
   temperature?: number
-  unit?: string
+  units?: string
 }
 
 export interface WeatherListMatch {
-  condition?: string
+  conditions?: string
   forecast?: any[]
   location?: string
   temperature?: number
-  unit?: string
+  units?: string
 }
 

@@ -15,30 +15,30 @@ declare(strict_types=1);
 /** Weather entity data model. */
 class Weather
 {
-    public ?string $condition = null;
+    public ?string $conditions = null;
     public ?array $forecast = null;
     public ?string $location = null;
     public ?float $temperature = null;
-    public ?string $unit = null;
+    public ?string $units = null;
 }
 
 /** Request payload for Weather#load. */
 class WeatherLoadMatch
 {
-    public ?string $condition = null;
+    public ?string $conditions = null;
     public ?array $forecast = null;
     public ?string $location = null;
     public ?float $temperature = null;
-    public ?string $unit = null;
+    public ?string $units = null;
 }
 
 /** Request payload for Weather#list. */
 class WeatherListMatch
 {
-    public ?string $condition = null;
+    public ?string $conditions = null;
     public ?array $forecast = null;
     public ?string $location = null;
     public ?float $temperature = null;
-    public ?string $unit = null;
+    public ?string $units = null;
 }
 

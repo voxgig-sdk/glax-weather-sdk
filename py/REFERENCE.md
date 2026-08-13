@@ -87,11 +87,11 @@ weather = client.Weather()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `condition` | `str` | No |  |
+| `conditions` | `str` | No |  |
 | `forecast` | `list` | No |  |
 | `location` | `str` | No |  |
 | `temperature` | `float` | No |  |
-| `unit` | `str` | No |  |
+| `units` | `str` | No |  |
 
 ### Operations
 

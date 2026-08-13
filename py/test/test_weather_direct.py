@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from glaxweather_sdk.utility.voxgig_struct import voxgig_struct as vs
 from glaxweather_sdk import GlaxWeatherSDK
-from core import helpers
+from glaxweather_sdk.core import helpers
 from test import runner
 
 
@@ -95,11 +95,11 @@ def _weather_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "GLAXWEATHER_TEST_WEATHER_ENTID": {},
-        "GLAXWEATHER_TEST_LIVE": "FALSE",
+        "GLAX_WEATHER_TEST_WEATHER_ENTID": {},
+        "GLAX_WEATHER_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("GLAXWEATHER_TEST_LIVE") == "TRUE"
+    live = env.get("GLAX_WEATHER_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

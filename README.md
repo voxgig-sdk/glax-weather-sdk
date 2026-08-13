@@ -38,9 +38,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = GlaxWeatherSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = GlaxWeatherSDK.test({
+  entity: {
+    weather: {
+      test01: { id: 'test01' },
+    },
+  },
+})
 const weathers = await client.Weather().list()
-// weathers is an array of bare Weather records populated with mock data
+// weathers is an array of Weather entities, populated with mock data
+// — call weathers[0].data() for the record itself
 console.log(weathers)
 ```
 
@@ -110,7 +119,7 @@ import { GlaxWeatherSDK } from '@voxgig-sdk/glax-weather'
 
 const client = new GlaxWeatherSDK()
 
-// List all weathers (returns Weather[])
+// List all weathers (returns WeatherEntity[] — .data() for the record)
 const weathers = await client.Weather().list()
 for (const weather of weathers) {
   console.log(weather)
@@ -191,7 +200,7 @@ $client = new GlaxWeatherSDK();
 $weathers = $client->Weather()->list();
 print_r($weathers);
 
-// Load a specific weather (returns the bare record; throws on error)
+// Load a specific weather (returns the ENTITY; call data_get() for the record; throws on error)
 $weather = $client->Weather()->load();
 print_r($weather);
 ```
@@ -222,7 +231,7 @@ client = GlaxWeatherSDK.new
 weathers = client.Weather.list
 puts weathers
 
-# Load a specific weather (returns the bare record; raises on error)
+# Load a specific weather (returns the ENTITY; call data_get for the record)
 weather = client.Weather.load()
 puts weather
 ```
@@ -359,6 +368,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://dragon.best](https://dragon.best)
 

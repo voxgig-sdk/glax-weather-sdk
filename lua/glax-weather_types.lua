@@ -7,25 +7,25 @@
 -- edit by hand.
 
 ---@class Weather
----@field condition? string
+---@field conditions? string
 ---@field forecast? table
 ---@field location? string
 ---@field temperature? number
----@field unit? string
+---@field units? string
 
 ---@class WeatherLoadMatch
----@field condition? string
+---@field conditions? string
 ---@field forecast? table
 ---@field location? string
 ---@field temperature? number
----@field unit? string
+---@field units? string
 
 ---@class WeatherListMatch
----@field condition? string
+---@field conditions? string
 ---@field forecast? table
 ---@field location? string
 ---@field temperature? number
----@field unit? string
+---@field units? string
 
 local M = {}
 

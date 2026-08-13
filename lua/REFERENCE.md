@@ -90,11 +90,11 @@ local weather = client:Weather(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `condition` | `string` | No |  |
+| `conditions` | `string` | No |  |
 | `forecast` | `table` | No |  |
 | `location` | `string` | No |  |
 | `temperature` | `number` | No |  |
-| `unit` | `string` | No |  |
+| `units` | `string` | No |  |
 
 ### Operations
 

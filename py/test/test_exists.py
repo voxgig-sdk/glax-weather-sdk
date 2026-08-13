@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# GlaxWeather SDK exists test
 
 import pytest
 from glaxweather_sdk import GlaxWeatherSDK

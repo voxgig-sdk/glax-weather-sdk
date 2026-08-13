@@ -10,7 +10,7 @@
 
 # Weather entity data model.
 #
-# @!attribute [rw] condition
+# @!attribute [rw] conditions
 #   @return [String, nil]
 #
 # @!attribute [rw] forecast
@@ -22,20 +22,20 @@
 # @!attribute [rw] temperature
 #   @return [Float, nil]
 #
-# @!attribute [rw] unit
+# @!attribute [rw] units
 #   @return [String, nil]
 Weather = Struct.new(
-  :condition,
+  :conditions,
   :forecast,
   :location,
   :temperature,
-  :unit,
+  :units,
   keyword_init: true
 )
 
 # Request payload for Weather#load.
 #
-# @!attribute [rw] condition
+# @!attribute [rw] conditions
 #   @return [String, nil]
 #
 # @!attribute [rw] forecast
@@ -47,20 +47,20 @@ Weather = Struct.new(
 # @!attribute [rw] temperature
 #   @return [Float, nil]
 #
-# @!attribute [rw] unit
+# @!attribute [rw] units
 #   @return [String, nil]
 WeatherLoadMatch = Struct.new(
-  :condition,
+  :conditions,
   :forecast,
   :location,
   :temperature,
-  :unit,
+  :units,
   keyword_init: true
 )
 
 # Request payload for Weather#list.
 #
-# @!attribute [rw] condition
+# @!attribute [rw] conditions
 #   @return [String, nil]
 #
 # @!attribute [rw] forecast
@@ -72,14 +72,14 @@ WeatherLoadMatch = Struct.new(
 # @!attribute [rw] temperature
 #   @return [Float, nil]
 #
-# @!attribute [rw] unit
+# @!attribute [rw] units
 #   @return [String, nil]
 WeatherListMatch = Struct.new(
-  :condition,
+  :conditions,
   :forecast,
   :location,
   :temperature,
-  :unit,
+  :units,
   keyword_init: true
 )
 

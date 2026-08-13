@@ -116,11 +116,11 @@ const weather = client.Weather()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `condition` | `string` | No |  |
+| `conditions` | `string` | No |  |
 | `forecast` | `any[]` | No |  |
 | `location` | `string` | No |  |
 | `temperature` | `number` | No |  |
-| `unit` | `string` | No |  |
+| `units` | `string` | No |  |
 
 ### Operations
 

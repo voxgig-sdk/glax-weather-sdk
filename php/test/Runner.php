@@ -43,8 +43,8 @@ class GlaxWeatherTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('GLAXWEATHER_TEST_LIVE');
-        $override = self::getenv('GLAXWEATHER_TEST_OVERRIDE');
+        $live = self::getenv('GLAX_WEATHER_TEST_LIVE');
+        $override = self::getenv('GLAX_WEATHER_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class GlaxWeatherTestRunner
             }
         }
 
-        $explain = self::getenv('GLAXWEATHER_TEST_EXPLAIN');
+        $explain = self::getenv('GLAX_WEATHER_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['GLAXWEATHER_TEST_EXPLAIN'] = $explain;
+            $m['GLAX_WEATHER_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

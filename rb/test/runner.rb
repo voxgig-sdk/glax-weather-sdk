@@ -23,8 +23,8 @@ module GlaxWeatherTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("GLAXWEATHER_TEST_LIVE")
-    override = getenv("GLAXWEATHER_TEST_OVERRIDE")
+    live = getenv("GLAX_WEATHER_TEST_LIVE")
+    override = getenv("GLAX_WEATHER_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module GlaxWeatherTestRunner
       end
     end
 
-    explain = getenv("GLAXWEATHER_TEST_EXPLAIN")
-    m["GLAXWEATHER_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("GLAX_WEATHER_TEST_EXPLAIN")
+    m["GLAX_WEATHER_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

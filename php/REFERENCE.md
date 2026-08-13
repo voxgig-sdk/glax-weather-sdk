@@ -92,11 +92,11 @@ $weather = $client->Weather();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `condition` | `string` | No |  |
+| `conditions` | `string` | No |  |
 | `forecast` | `array` | No |  |
 | `location` | `string` | No |  |
 | `temperature` | `float` | No |  |
-| `unit` | `string` | No |  |
+| `units` | `string` | No |  |
 
 ### Operations
 

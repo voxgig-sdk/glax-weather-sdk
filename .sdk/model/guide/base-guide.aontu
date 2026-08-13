@@ -8,6 +8,7 @@ guide: {
   entity: weather: {
     path: "/glax_weather.json": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.forecast`")|top
     }
     path: "/glax_weather.png": {
       op: load: method: *GET

@@ -26,7 +26,7 @@ local function make_config()
         ["fields"] = {
           {
             ["active"] = true,
-            ["name"] = "condition",
+            ["name"] = "conditions",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 0,
@@ -54,7 +54,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "unit",
+            ["name"] = "units",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 4,
@@ -116,6 +116,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/glax_weather.json",
                 ["parts"] = {
@@ -132,7 +133,7 @@ local function make_config()
                 },
                 ["transform"] = {
                   ["req"] = "`reqdata`",
-                  ["res"] = "`body`",
+                  ["res"] = "`body.forecast`",
                 },
                 ["index$"] = 0,
               },
@@ -193,6 +194,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/glax_weather.png",
                 ["parts"] = {

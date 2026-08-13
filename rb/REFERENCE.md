@@ -93,11 +93,11 @@ weather = client.Weather
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `condition` | `String` | No |  |
+| `conditions` | `String` | No |  |
 | `forecast` | `Array` | No |  |
 | `location` | `String` | No |  |
 | `temperature` | `Float` | No |  |
-| `unit` | `String` | No |  |
+| `units` | `String` | No |  |
 
 ### Operations
 

@@ -43,7 +43,7 @@ local weathers, err = client:Weather():list()
 if err then error(err) end
 
 for _, item in ipairs(weathers) do
-  print(item["condition"])
+  print(item["conditions"])
 end
 ```
 
@@ -241,11 +241,11 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `condition` |  |
+| `conditions` |  |
 | `forecast` |  |
 | `location` |  |
 | `temperature` |  |
-| `unit` |  |
+| `units` |  |
 
 Operations: List, Load.
 
@@ -271,11 +271,11 @@ Create an instance: `local weather = client:Weather(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `condition` | `string` |  |
+| `conditions` | `string` |  |
 | `forecast` | `table` |  |
 | `location` | `string` |  |
 | `temperature` | `number` |  |
-| `unit` | `string` |  |
+| `units` | `string` |  |
 
 #### Example: Load
 
