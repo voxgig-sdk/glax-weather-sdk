@@ -36,7 +36,7 @@ class Config {
 
 
   options = {
-    base: 'https://dragon.best/api',
+    base: "https://dragon.best/api",
 
     headers: {
       "content-type": "application/json"
@@ -55,39 +55,24 @@ class Config {
     "weather": {
       "fields": [
         {
-          "active": true,
           "name": "conditions",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "forecast",
-          "req": false,
-          "type": "`$ARRAY`",
-          "index$": 1
+          "type": "`$ARRAY`"
         },
         {
-          "active": true,
           "name": "location",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 2
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "temperature",
-          "req": false,
-          "type": "`$NUMBER`",
-          "index$": 3
+          "type": "`$NUMBER`"
         },
         {
-          "active": true,
           "name": "units",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 4
+          "type": "`$STRING`"
         }
       ],
       "name": "weather",
@@ -97,51 +82,40 @@ class Config {
           "name": "list",
           "points": [
             {
-              "active": true,
               "args": {
                 "query": [
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "forecast",
                     "orig": "forecast",
-                    "reqd": false,
                     "type": "`$BOOLEAN`"
                   },
                   {
-                    "active": true,
                     "example": 51.5074,
                     "kind": "query",
                     "name": "lat",
                     "orig": "lat",
-                    "reqd": false,
                     "type": "`$NUMBER`"
                   },
                   {
-                    "active": true,
                     "example": "London,UK",
                     "kind": "query",
                     "name": "location",
                     "orig": "location",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "example": -0.1276,
                     "kind": "query",
                     "name": "lon",
                     "orig": "lon",
-                    "reqd": false,
                     "type": "`$NUMBER`"
                   },
                   {
-                    "active": true,
                     "example": "default",
                     "kind": "query",
                     "name": "unit",
                     "orig": "unit",
-                    "reqd": false,
                     "type": "`$STRING`"
                   }
                 ]
@@ -164,62 +138,49 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body.forecast`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "list"
+          ]
         },
         "load": {
           "input": "data",
           "name": "load",
           "points": [
             {
-              "active": true,
               "args": {
                 "query": [
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "forecast",
                     "orig": "forecast",
-                    "reqd": false,
                     "type": "`$BOOLEAN`"
                   },
                   {
-                    "active": true,
                     "example": 51.5074,
                     "kind": "query",
                     "name": "lat",
                     "orig": "lat",
-                    "reqd": false,
                     "type": "`$NUMBER`"
                   },
                   {
-                    "active": true,
                     "example": "London,UK",
                     "kind": "query",
                     "name": "location",
                     "orig": "location",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "example": -0.1276,
                     "kind": "query",
                     "name": "lon",
                     "orig": "lon",
-                    "reqd": false,
                     "type": "`$NUMBER`"
                   },
                   {
-                    "active": true,
                     "example": "default",
                     "kind": "query",
                     "name": "unit",
                     "orig": "unit",
-                    "reqd": false,
                     "type": "`$STRING`"
                   }
                 ]
@@ -242,11 +203,9 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "load"
+          ]
         }
       },
       "relations": {

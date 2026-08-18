@@ -40,7 +40,7 @@ class GlaxWeatherSDK
         $utility = new GlaxWeatherUtility();
         $this->_utility = $utility;
 
-        $config = GlaxWeatherConfig::make_config();
+        $config = GlaxWeatherConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

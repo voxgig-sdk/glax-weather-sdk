@@ -23,7 +23,7 @@ func NewGlaxWeatherSDK(options map[string]any) *GlaxWeatherSDK {
 
 	sdk.utility = NewUtility()
 
-	config := MakeConfig()
+	config := SharedConfig()
 
 	sdk.rootctx = sdk.utility.MakeContext(map[string]any{
 		"client":  sdk,

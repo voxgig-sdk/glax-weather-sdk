@@ -28,7 +28,7 @@ class GlaxWeatherSDK
     utility = GlaxWeatherUtility.new
     @_utility = utility
 
-    config = GlaxWeatherConfig.make_config
+    config = GlaxWeatherConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

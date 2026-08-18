@@ -15,7 +15,7 @@ require_relative "../GlaxWeather_sdk"
 module GlaxWeatherFeatureHarness
   # True when this SDK was generated with the named feature.
   def self.has_feature?(name)
-    f = GlaxWeatherConfig.make_config["feature"]
+    f = GlaxWeatherConfig.shared_config["feature"]
     f.is_a?(Hash) && !f[name].nil?
   end
 
