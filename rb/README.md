@@ -250,11 +250,11 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `conditions` |  |
-| `forecast` |  |
-| `location` |  |
-| `temperature` |  |
-| `units` |  |
+| `conditions` | Weather conditions |
+| `forecast` | Weather forecast data (if requested) |
+| `location` | Location name |
+| `temperature` | Current temperature |
+| `units` | Units used for measurements |
 
 Operations: List, Load.
 
@@ -280,11 +280,11 @@ Create an instance: `weather = client.Weather`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `conditions` | `String` |  |
-| `forecast` | `Array` |  |
-| `location` | `String` |  |
-| `temperature` | `Float` |  |
-| `units` | `String` |  |
+| `conditions` | `String` | Weather conditions |
+| `forecast` | `Array` | Weather forecast data (if requested) |
+| `location` | `String` | Location name |
+| `temperature` | `Float` | Current temperature |
+| `units` | `String` | Units used for measurements |
 
 #### Example: Load
 

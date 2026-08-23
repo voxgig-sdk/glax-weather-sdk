@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "GlaxWeather",
+			"slug": "glax-weather",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -33,22 +36,27 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "conditions",
+						"short": "Weather conditions",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "forecast",
+						"short": "Weather forecast data (if requested)",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "location",
+						"short": "Location name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "temperature",
+						"short": "Current temperature",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "units",
+						"short": "Units used for measurements",
 						"type": "`$STRING`",
 					},
 				},

@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -302,11 +302,11 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `conditions` |  |
-| `forecast` |  |
-| `location` |  |
-| `temperature` |  |
-| `units` |  |
+| `conditions` | Weather conditions |
+| `forecast` | Weather forecast data (if requested) |
+| `location` | Location name |
+| `temperature` | Current temperature |
+| `units` | Units used for measurements |
 
 Operations: list, load.
 
@@ -332,11 +332,11 @@ Create an instance: `const weather = client.Weather()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `conditions` | `string` |  |
-| `forecast` | `any[]` |  |
-| `location` | `string` |  |
-| `temperature` | `number` |  |
-| `units` | `string` |  |
+| `conditions` | `string` | Weather conditions |
+| `forecast` | `any[]` | Weather forecast data (if requested) |
+| `location` | `string` | Location name |
+| `temperature` | `number` | Current temperature |
+| `units` | `string` | Units used for measurements |
 
 #### Example: Load
 

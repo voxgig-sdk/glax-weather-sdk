@@ -92,11 +92,11 @@ $weather = $client->Weather();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `conditions` | `string` | No |  |
-| `forecast` | `array` | No |  |
-| `location` | `string` | No |  |
-| `temperature` | `float` | No |  |
-| `units` | `string` | No |  |
+| `conditions` | `string` | No | Weather conditions |
+| `forecast` | `array` | No | Weather forecast data (if requested) |
+| `location` | `string` | No | Location name |
+| `temperature` | `float` | No | Current temperature |
+| `units` | `string` | No | Units used for measurements |
 
 ### Operations
 

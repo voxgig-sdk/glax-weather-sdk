@@ -260,11 +260,11 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `conditions` |  |
-| `forecast` |  |
-| `location` |  |
-| `temperature` |  |
-| `units` |  |
+| `conditions` | Weather conditions |
+| `forecast` | Weather forecast data (if requested) |
+| `location` | Location name |
+| `temperature` | Current temperature |
+| `units` | Units used for measurements |
 
 Operations: List, Load.
 
@@ -290,11 +290,11 @@ Create an instance: `$weather = $client->Weather();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `conditions` | `string` |  |
-| `forecast` | `array` |  |
-| `location` | `string` |  |
-| `temperature` | `float` |  |
-| `units` | `string` |  |
+| `conditions` | `string` | Weather conditions |
+| `forecast` | `array` | Weather forecast data (if requested) |
+| `location` | `string` | Location name |
+| `temperature` | `float` | Current temperature |
+| `units` | `string` | Units used for measurements |
 
 #### Example: Load
 

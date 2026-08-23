@@ -98,11 +98,11 @@ fmt.Println(weather.GetName()) // "weather"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `conditions` | `string` | No |  |
-| `forecast` | `[]any` | No |  |
-| `location` | `string` | No |  |
-| `temperature` | `float64` | No |  |
-| `units` | `string` | No |  |
+| `conditions` | `string` | No | Weather conditions |
+| `forecast` | `[]any` | No | Weather forecast data (if requested) |
+| `location` | `string` | No | Location name |
+| `temperature` | `float64` | No | Current temperature |
+| `units` | `string` | No | Units used for measurements |
 
 ### Operations
 

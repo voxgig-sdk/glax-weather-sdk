@@ -36,30 +36,35 @@
               "active": true,
               "name": "conditions",
               "req": false,
+              "short": "Weather conditions",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "forecast",
               "req": false,
+              "short": "Weather forecast data (if requested)",
               "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "location",
               "req": false,
+              "short": "Location name",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "temperature",
               "req": false,
+              "short": "Current temperature",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "units",
               "req": false,
+              "short": "Units used for measurements",
               "type": "`$STRING`"
             }
           ],

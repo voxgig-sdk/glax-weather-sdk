@@ -93,11 +93,11 @@ weather = client.Weather
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `conditions` | `String` | No |  |
-| `forecast` | `Array` | No |  |
-| `location` | `String` | No |  |
-| `temperature` | `Float` | No |  |
-| `units` | `String` | No |  |
+| `conditions` | `String` | No | Weather conditions |
+| `forecast` | `Array` | No | Weather forecast data (if requested) |
+| `location` | `String` | No | Location name |
+| `temperature` | `Float` | No | Current temperature |
+| `units` | `String` | No | Units used for measurements |
 
 ### Operations
 

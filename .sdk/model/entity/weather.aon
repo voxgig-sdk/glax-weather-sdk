@@ -8,26 +8,31 @@ main: kit: entity: weather: {
     {
       name: "conditions"
       req: false
+      short: "Weather conditions"
       type: "`$STRING`"
     }
     {
       name: "forecast"
       req: false
+      short: "Weather forecast data (if requested)"
       type: "`$ARRAY`"
     }
     {
       name: "location"
       req: false
+      short: "Location name"
       type: "`$STRING`"
     }
     {
       name: "temperature"
       req: false
+      short: "Current temperature"
       type: "`$NUMBER`"
     }
     {
       name: "units"
       req: false
+      short: "Units used for measurements"
       type: "`$STRING`"
     }
   ]

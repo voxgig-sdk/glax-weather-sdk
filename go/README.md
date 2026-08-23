@@ -6,7 +6,7 @@ The Golang SDK for the GlaxWeather API — an entity-oriented client using stand
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.Weather(nil)` — each with the same small set of operations (`List`, `Load`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -269,11 +269,11 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"conditions"` |  |
-| `"forecast"` |  |
-| `"location"` |  |
-| `"temperature"` |  |
-| `"units"` |  |
+| `"conditions"` | Weather conditions |
+| `"forecast"` | Weather forecast data (if requested) |
+| `"location"` | Location name |
+| `"temperature"` | Current temperature |
+| `"units"` | Units used for measurements |
 
 Operations: List, Load.
 
@@ -299,11 +299,11 @@ Create an instance: `weather := client.Weather(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `conditions` | `string` |  |
-| `forecast` | `[]any` |  |
-| `location` | `string` |  |
-| `temperature` | `float64` |  |
-| `units` | `string` |  |
+| `conditions` | `string` | Weather conditions |
+| `forecast` | `[]any` | Weather forecast data (if requested) |
+| `location` | `string` | Location name |
+| `temperature` | `float64` | Current temperature |
+| `units` | `string` | Units used for measurements |
 
 #### Example: Load
 

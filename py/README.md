@@ -256,11 +256,11 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `conditions` |  |
-| `forecast` |  |
-| `location` |  |
-| `temperature` |  |
-| `units` |  |
+| `conditions` | Weather conditions |
+| `forecast` | Weather forecast data (if requested) |
+| `location` | Location name |
+| `temperature` | Current temperature |
+| `units` | Units used for measurements |
 
 Operations: List, Load.
 
@@ -286,11 +286,11 @@ Create an instance: `weather = client.Weather()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `conditions` | `str` |  |
-| `forecast` | `list` |  |
-| `location` | `str` |  |
-| `temperature` | `float` |  |
-| `units` | `str` |  |
+| `conditions` | `str` | Weather conditions |
+| `forecast` | `list` | Weather forecast data (if requested) |
+| `location` | `str` | Location name |
+| `temperature` | `float` | Current temperature |
+| `units` | `str` | Units used for measurements |
 
 #### Example: Load
 

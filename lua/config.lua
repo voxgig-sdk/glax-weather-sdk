@@ -7,6 +7,9 @@ local function make_config()
   return {
     main = {
       name = "GlaxWeather",
+      slug = "glax-weather",
+      version = "0.0.1",
+      target = "lua",
     },
     feature = {
       ["test"] = {
@@ -29,22 +32,27 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "conditions",
+            ["short"] = "Weather conditions",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "forecast",
+            ["short"] = "Weather forecast data (if requested)",
             ["type"] = "`$ARRAY`",
           },
           {
             ["name"] = "location",
+            ["short"] = "Location name",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "temperature",
+            ["short"] = "Current temperature",
             ["type"] = "`$NUMBER`",
           },
           {
             ["name"] = "units",
+            ["short"] = "Units used for measurements",
             ["type"] = "`$STRING`",
           },
         },

@@ -241,11 +241,11 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `conditions` |  |
-| `forecast` |  |
-| `location` |  |
-| `temperature` |  |
-| `units` |  |
+| `conditions` | Weather conditions |
+| `forecast` | Weather forecast data (if requested) |
+| `location` | Location name |
+| `temperature` | Current temperature |
+| `units` | Units used for measurements |
 
 Operations: List, Load.
 
@@ -271,11 +271,11 @@ Create an instance: `local weather = client:Weather(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `conditions` | `string` |  |
-| `forecast` | `table` |  |
-| `location` | `string` |  |
-| `temperature` | `number` |  |
-| `units` | `string` |  |
+| `conditions` | `string` | Weather conditions |
+| `forecast` | `table` | Weather forecast data (if requested) |
+| `location` | `string` | Location name |
+| `temperature` | `number` | Current temperature |
+| `units` | `string` | Units used for measurements |
 
 #### Example: Load
 
