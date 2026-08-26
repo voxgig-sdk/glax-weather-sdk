@@ -42,6 +42,7 @@ class GlaxWeatherConfig
           'options' => [
             'active' => false,
           ],
+          'transport' => 'base',
         ],
             ],
             "options" => [
