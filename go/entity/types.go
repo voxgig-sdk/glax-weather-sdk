@@ -23,20 +23,20 @@ type Weather struct {
 
 // WeatherLoadMatch is the typed request payload for Weather.LoadTyped.
 type WeatherLoadMatch struct {
-	Conditions *string `json:"conditions,omitempty"`
-	Forecast *[]any `json:"forecast,omitempty"`
+	Forecast *bool `json:"forecast,omitempty"`
+	Lat *float64 `json:"lat,omitempty"`
 	Location *string `json:"location,omitempty"`
-	Temperature *float64 `json:"temperature,omitempty"`
-	Units *string `json:"units,omitempty"`
+	Lon *float64 `json:"lon,omitempty"`
+	Unit *string `json:"unit,omitempty"`
 }
 
 // WeatherListMatch is the typed request payload for Weather.ListTyped.
 type WeatherListMatch struct {
-	Conditions *string `json:"conditions,omitempty"`
-	Forecast *[]any `json:"forecast,omitempty"`
+	Forecast *bool `json:"forecast,omitempty"`
+	Lat *float64 `json:"lat,omitempty"`
 	Location *string `json:"location,omitempty"`
-	Temperature *float64 `json:"temperature,omitempty"`
-	Units *string `json:"units,omitempty"`
+	Lon *float64 `json:"lon,omitempty"`
+	Unit *string `json:"unit,omitempty"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the

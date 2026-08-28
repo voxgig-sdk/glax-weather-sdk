@@ -25,20 +25,20 @@ class Weather
 /** Request payload for Weather#load. */
 class WeatherLoadMatch
 {
-    public ?string $conditions = null;
-    public ?array $forecast = null;
+    public ?bool $forecast = null;
+    public ?float $lat = null;
     public ?string $location = null;
-    public ?float $temperature = null;
-    public ?string $units = null;
+    public ?float $lon = null;
+    public ?string $unit = null;
 }
 
 /** Request payload for Weather#list. */
 class WeatherListMatch
 {
-    public ?string $conditions = null;
-    public ?array $forecast = null;
+    public ?bool $forecast = null;
+    public ?float $lat = null;
     public ?string $location = null;
-    public ?float $temperature = null;
-    public ?string $units = null;
+    public ?float $lon = null;
+    public ?string $unit = null;
 }
 

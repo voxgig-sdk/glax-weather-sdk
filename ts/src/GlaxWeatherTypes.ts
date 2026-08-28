@@ -14,18 +14,18 @@ export interface Weather {
 }
 
 export interface WeatherLoadMatch {
-  conditions?: string
-  forecast?: any[]
+  forecast?: boolean
+  lat?: number
   location?: string
-  temperature?: number
-  units?: string
+  lon?: number
+  unit?: string
 }
 
 export interface WeatherListMatch {
-  conditions?: string
-  forecast?: any[]
+  forecast?: boolean
+  lat?: number
   location?: string
-  temperature?: number
-  units?: string
+  lon?: number
+  unit?: string
 }
 

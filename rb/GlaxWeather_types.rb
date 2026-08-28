@@ -35,51 +35,51 @@ Weather = Struct.new(
 
 # Request payload for Weather#load.
 #
-# @!attribute [rw] conditions
-#   @return [String, nil]
-#
 # @!attribute [rw] forecast
-#   @return [Array, nil]
+#   @return [Boolean, nil]
+#
+# @!attribute [rw] lat
+#   @return [Float, nil]
 #
 # @!attribute [rw] location
 #   @return [String, nil]
 #
-# @!attribute [rw] temperature
+# @!attribute [rw] lon
 #   @return [Float, nil]
 #
-# @!attribute [rw] units
+# @!attribute [rw] unit
 #   @return [String, nil]
 WeatherLoadMatch = Struct.new(
-  :conditions,
   :forecast,
+  :lat,
   :location,
-  :temperature,
-  :units,
+  :lon,
+  :unit,
   keyword_init: true
 )
 
 # Request payload for Weather#list.
 #
-# @!attribute [rw] conditions
-#   @return [String, nil]
-#
 # @!attribute [rw] forecast
-#   @return [Array, nil]
+#   @return [Boolean, nil]
+#
+# @!attribute [rw] lat
+#   @return [Float, nil]
 #
 # @!attribute [rw] location
 #   @return [String, nil]
 #
-# @!attribute [rw] temperature
+# @!attribute [rw] lon
 #   @return [Float, nil]
 #
-# @!attribute [rw] units
+# @!attribute [rw] unit
 #   @return [String, nil]
 WeatherListMatch = Struct.new(
-  :conditions,
   :forecast,
+  :lat,
   :location,
-  :temperature,
-  :units,
+  :lon,
+  :unit,
   keyword_init: true
 )
 

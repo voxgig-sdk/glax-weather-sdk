@@ -25,16 +25,16 @@ class Weather(TypedDict, total=False):
 
 
 class WeatherLoadMatch(TypedDict, total=False):
-    conditions: str
-    forecast: list
+    forecast: bool
+    lat: float
     location: str
-    temperature: float
-    units: str
+    lon: float
+    unit: str
 
 
 class WeatherListMatch(TypedDict, total=False):
-    conditions: str
-    forecast: list
+    forecast: bool
+    lat: float
     location: str
-    temperature: float
-    units: str
+    lon: float
+    unit: str
