@@ -88,8 +88,10 @@ main: kit: entity: weather: {
           }
           method: "GET"
           orig: "/glax_weather.json"
-          parts: [
-            "glax_weather.json"
+          segments: [
+            {
+              lit: "glax_weather.json"
+            }
           ]
           select: {
             exist: [
@@ -156,8 +158,10 @@ main: kit: entity: weather: {
           }
           method: "GET"
           orig: "/glax_weather.png"
-          parts: [
-            "glax_weather.png"
+          segments: [
+            {
+              lit: "glax_weather.png"
+            }
           ]
           select: {
             exist: [

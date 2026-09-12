@@ -131,8 +131,10 @@ class GlaxWeatherConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/glax_weather.json',
-                  'parts' => [
-                    'glax_weather.json',
+                  'segments' => [
+                    [
+                      'lit' => 'glax_weather.json',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -146,6 +148,9 @@ class GlaxWeatherConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body.forecast`',
+                  ],
+                  'parts' => [
+                    'glax_weather.json',
                   ],
                 ],
               ],
@@ -196,8 +201,10 @@ class GlaxWeatherConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/glax_weather.png',
-                  'parts' => [
-                    'glax_weather.png',
+                  'segments' => [
+                    [
+                      'lit' => 'glax_weather.png',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -211,6 +218,9 @@ class GlaxWeatherConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'glax_weather.png',
                   ],
                 ],
               ],
