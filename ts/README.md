@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { GlaxWeatherSDK } from '@voxgig-sdk/glax-weather'
+import { GlaxWeatherSDK } from '@voxgig-sdk/glax-weather-sdk'
 
 const client = new GlaxWeatherSDK()
 ```
@@ -433,7 +433,7 @@ glax-weather/
 Import the SDK from the package root:
 
 ```ts
-import { GlaxWeatherSDK } from '@voxgig-sdk/glax-weather'
+import { GlaxWeatherSDK } from '@voxgig-sdk/glax-weather-sdk'
 ```
 
 ### Entity state

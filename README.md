@@ -105,7 +105,7 @@ local results, err = client:Weather():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/glax-weather` | publish pending — [install from git tag](https://github.com/voxgig-sdk/glax-weather-sdk/releases) |
+| TypeScript | `@voxgig-sdk/glax-weather-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/glax-weather-sdk/releases) |
 | Python | `voxgig-sdk-glax-weather` | publish pending — [install from git tag](https://github.com/voxgig-sdk/glax-weather-sdk/releases) |
 | PHP | `voxgig-sdk/glax-weather` | publish pending — [install from git tag](https://github.com/voxgig-sdk/glax-weather-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/glax-weather-sdk/go` | `go get github.com/voxgig-sdk/glax-weather-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:Weather():list()
 ### TypeScript
 
 ```ts
-import { GlaxWeatherSDK } from '@voxgig-sdk/glax-weather'
+import { GlaxWeatherSDK } from '@voxgig-sdk/glax-weather-sdk'
 
 const client = new GlaxWeatherSDK()
 
