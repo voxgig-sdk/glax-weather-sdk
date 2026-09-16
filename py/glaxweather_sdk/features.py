@@ -1,12 +1,18 @@
 # GlaxWeather SDK feature factory
 
 from glaxweather_sdk.feature.base_feature import GlaxWeatherBaseFeature
+from glaxweather_sdk.feature.ratelimit_feature import GlaxWeatherRatelimitFeature
+from glaxweather_sdk.feature.retry_feature import GlaxWeatherRetryFeature
 from glaxweather_sdk.feature.test_feature import GlaxWeatherTestFeature
+from glaxweather_sdk.feature.timeout_feature import GlaxWeatherTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: GlaxWeatherBaseFeature(),
+    "ratelimit": lambda: GlaxWeatherRatelimitFeature(),
+    "retry": lambda: GlaxWeatherRetryFeature(),
     "test": lambda: GlaxWeatherTestFeature(),
+    "timeout": lambda: GlaxWeatherTimeoutFeature(),
 }
 
 

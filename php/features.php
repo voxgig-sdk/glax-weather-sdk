@@ -4,7 +4,10 @@ declare(strict_types=1);
 // GlaxWeather SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class GlaxWeatherFeatures
@@ -14,8 +17,14 @@ class GlaxWeatherFeatures
         switch ($name) {
             case "base":
                 return new GlaxWeatherBaseFeature();
+            case "ratelimit":
+                return new GlaxWeatherRatelimitFeature();
+            case "retry":
+                return new GlaxWeatherRetryFeature();
             case "test":
                 return new GlaxWeatherTestFeature();
+            case "timeout":
+                return new GlaxWeatherTimeoutFeature();
             default:
                 return new GlaxWeatherBaseFeature();
         }
@@ -31,7 +40,10 @@ class GlaxWeatherFeatures
     {
         switch ($name) {
             case "base":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;

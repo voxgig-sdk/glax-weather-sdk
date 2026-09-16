@@ -86,6 +86,12 @@ main: kit: entity: weather: {
               }
             ]
           }
+          contract: {
+            id: "GET /glax_weather.json"
+            json: "{\"operationId\":\"getWeatherJson\",\"parameters\":[{\"description\":\"Weather location in format 'city,country'\",\"example\":\"London,UK\",\"in\":\"query\",\"name\":\"location\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Longitude (only used if location isn't given)\",\"example\":-0.1276,\"in\":\"query\",\"name\":\"lon\",\"required\":false,\"schema\":{\"format\":\"float\",\"type\":\"number\"}},{\"description\":\"Latitude (only used if location isn't given)\",\"example\":51.5074,\"in\":\"query\",\"name\":\"lat\",\"required\":false,\"schema\":{\"format\":\"float\",\"type\":\"number\"}},{\"description\":\"Measure units for temperature and other metrics\",\"in\":\"query\",\"name\":\"units\",\"required\":false,\"schema\":{\"default\":\"default\",\"enum\":[\"default\",\"metric\",\"imperial\"],\"type\":\"string\"}},{\"description\":\"Show weather forecast\",\"in\":\"query\",\"name\":\"forecast\",\"required\":false,\"schema\":{\"type\":\"boolean\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"conditions\":{\"description\":\"Weather conditions\",\"type\":\"string\"},\"forecast\":{\"description\":\"Weather forecast data (if requested)\",\"items\":{\"type\":\"object\"},\"type\":\"array\"},\"location\":{\"description\":\"Location name\",\"type\":\"string\"},\"temperature\":{\"description\":\"Current temperature\",\"type\":\"number\"},\"units\":{\"description\":\"Units used for measurements\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful response with weather data\"},\"400\":{\"description\":\"Bad request - invalid parameters\"},\"404\":{\"description\":\"Location not found\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/glax_weather.json"
           segments: [
@@ -155,6 +161,12 @@ main: kit: entity: weather: {
                 type: "`$STRING`"
               }
             ]
+          }
+          contract: {
+            id: "GET /glax_weather.png"
+            json: "{\"operationId\":\"getWeatherPng\",\"parameters\":[{\"description\":\"Weather location in format 'city,country'\",\"example\":\"London,UK\",\"in\":\"query\",\"name\":\"location\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Longitude (only used if location isn't given)\",\"example\":-0.1276,\"in\":\"query\",\"name\":\"lon\",\"required\":false,\"schema\":{\"format\":\"float\",\"type\":\"number\"}},{\"description\":\"Latitude (only used if location isn't given)\",\"example\":51.5074,\"in\":\"query\",\"name\":\"lat\",\"required\":false,\"schema\":{\"format\":\"float\",\"type\":\"number\"}},{\"description\":\"Measure units for temperature and other metrics\",\"in\":\"query\",\"name\":\"units\",\"required\":false,\"schema\":{\"default\":\"default\",\"enum\":[\"default\",\"metric\",\"imperial\"],\"type\":\"string\"}},{\"description\":\"Show weather forecast\",\"in\":\"query\",\"name\":\"forecast\",\"required\":false,\"schema\":{\"type\":\"boolean\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"image/png\":{\"schema\":{\"format\":\"binary\",\"type\":\"string\"}}},\"description\":\"Successful response with weather image\"},\"400\":{\"description\":\"Bad request - invalid parameters\"},\"404\":{\"description\":\"Location not found\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
           }
           method: "GET"
           orig: "/glax_weather.png"
