@@ -1,7 +1,7 @@
 // Typed models for the GlaxWeather SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -14,11 +14,6 @@ import (
 
 // Weather is the typed data model for the weather entity.
 type Weather struct {
-	Conditions *string `json:"conditions,omitempty"`
-	Forecast *[]any `json:"forecast,omitempty"`
-	Location *string `json:"location,omitempty"`
-	Temperature *float64 `json:"temperature,omitempty"`
-	Units *string `json:"units,omitempty"`
 }
 
 // WeatherLoadMatch is the typed request payload for Weather.LoadTyped.

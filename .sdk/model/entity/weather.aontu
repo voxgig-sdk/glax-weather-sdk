@@ -1,0 +1,201 @@
+# Entity: weather
+
+main: kit: entity: weather: {
+
+  alias: field: {}
+
+  fields: {
+    conditions: {
+      h: "Conditions"
+      n: "conditions"
+      r: false
+      sh: "Weather conditions"
+      t: "`$STRING`"
+    }
+    forecast: {
+      h: "Forecast"
+      n: "forecast"
+      r: false
+      sh: "Weather forecast data (if requested)"
+      t: "`$ARRAY`"
+    }
+    location: {
+      h: "Location"
+      n: "location"
+      r: false
+      sh: "Location name"
+      t: "`$STRING`"
+    }
+    temperature: {
+      h: "Temperature"
+      n: "temperature"
+      r: false
+      sh: "Current temperature"
+      t: "`$NUMBER`"
+    }
+    units: {
+      h: "Units"
+      n: "units"
+      r: false
+      sh: "Units used for measurements"
+      t: "`$STRING`"
+    }
+  }
+
+  name: "weather"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /glax_weather.json"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "forecast"
+                or: "forecast"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                ex: 51.5074
+                k: "query"
+                n: "lat"
+                or: "lat"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                ex: "London,UK"
+                k: "query"
+                n: "location"
+                or: "location"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: -0.1276
+                k: "query"
+                n: "lon"
+                or: "lon"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                ex: "default"
+                k: "query"
+                n: "unit"
+                or: "unit"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/glax_weather.json"
+          q: {
+            exist: [
+              "forecast"
+              "lat"
+              "location"
+              "lon"
+              "unit"
+            ]
+          }
+          s: [
+            {
+              lit: "glax_weather.json"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.forecast`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /glax_weather.png"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "forecast"
+                or: "forecast"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                ex: 51.5074
+                k: "query"
+                n: "lat"
+                or: "lat"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                ex: "London,UK"
+                k: "query"
+                n: "location"
+                or: "location"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: -0.1276
+                k: "query"
+                n: "lon"
+                or: "lon"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                ex: "default"
+                k: "query"
+                n: "unit"
+                or: "unit"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/glax_weather.png"
+          q: {
+            exist: [
+              "forecast"
+              "lat"
+              "location"
+              "lon"
+              "unit"
+            ]
+          }
+          s: [
+            {
+              lit: "glax_weather.png"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -116,28 +116,33 @@ def make_config():
         "fields": [
           {
             "name": "conditions",
-            "short": "Weather conditions",
+            "title": "Conditions",
             "type": "`$STRING`",
+            "short": "Weather conditions",
           },
           {
             "name": "forecast",
-            "short": "Weather forecast data (if requested)",
+            "title": "Forecast",
             "type": "`$ARRAY`",
+            "short": "Weather forecast data (if requested)",
           },
           {
             "name": "location",
-            "short": "Location name",
+            "title": "Location",
             "type": "`$STRING`",
+            "short": "Location name",
           },
           {
             "name": "temperature",
-            "short": "Current temperature",
+            "title": "Temperature",
             "type": "`$NUMBER`",
+            "short": "Current temperature",
           },
           {
             "name": "units",
-            "short": "Units used for measurements",
+            "title": "Units",
             "type": "`$STRING`",
+            "short": "Units used for measurements",
           },
         ],
         "name": "weather",
@@ -147,44 +152,6 @@ def make_config():
             "name": "list",
             "points": [
               {
-                "args": {
-                  "query": [
-                    {
-                      "kind": "query",
-                      "name": "forecast",
-                      "orig": "forecast",
-                      "type": "`$BOOLEAN`",
-                    },
-                    {
-                      "example": 51.5074,
-                      "kind": "query",
-                      "name": "lat",
-                      "orig": "lat",
-                      "type": "`$NUMBER`",
-                    },
-                    {
-                      "example": "London,UK",
-                      "kind": "query",
-                      "name": "location",
-                      "orig": "location",
-                      "type": "`$STRING`",
-                    },
-                    {
-                      "example": -0.1276,
-                      "kind": "query",
-                      "name": "lon",
-                      "orig": "lon",
-                      "type": "`$NUMBER`",
-                    },
-                    {
-                      "example": "default",
-                      "kind": "query",
-                      "name": "unit",
-                      "orig": "unit",
-                      "type": "`$STRING`",
-                    },
-                  ],
-                },
                 "kind": "http",
                 "method": "GET",
                 "orig": "/glax_weather.json",
@@ -193,6 +160,52 @@ def make_config():
                     "lit": "glax_weather.json",
                   },
                 ],
+                "parts": [
+                  "glax_weather.json",
+                ],
+                "rename": {},
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body.forecast`",
+                },
+                "args": {
+                  "query": [
+                    {
+                      "name": "forecast",
+                      "orig": "forecast",
+                      "type": "`$BOOLEAN`",
+                      "kind": "query",
+                    },
+                    {
+                      "name": "lat",
+                      "orig": "lat",
+                      "type": "`$NUMBER`",
+                      "kind": "query",
+                      "example": 51.5074,
+                    },
+                    {
+                      "name": "location",
+                      "orig": "location",
+                      "type": "`$STRING`",
+                      "kind": "query",
+                      "example": "London,UK",
+                    },
+                    {
+                      "name": "lon",
+                      "orig": "lon",
+                      "type": "`$NUMBER`",
+                      "kind": "query",
+                      "example": -0.1276,
+                    },
+                    {
+                      "name": "unit",
+                      "orig": "unit",
+                      "type": "`$STRING`",
+                      "kind": "query",
+                      "example": "default",
+                    },
+                  ],
+                },
                 "select": {
                   "exist": [
                     "forecast",
@@ -202,13 +215,6 @@ def make_config():
                     "unit",
                   ],
                 },
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body.forecast`",
-                },
-                "parts": [
-                  "glax_weather.json",
-                ],
               },
             ],
           },
@@ -217,44 +223,6 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "args": {
-                  "query": [
-                    {
-                      "kind": "query",
-                      "name": "forecast",
-                      "orig": "forecast",
-                      "type": "`$BOOLEAN`",
-                    },
-                    {
-                      "example": 51.5074,
-                      "kind": "query",
-                      "name": "lat",
-                      "orig": "lat",
-                      "type": "`$NUMBER`",
-                    },
-                    {
-                      "example": "London,UK",
-                      "kind": "query",
-                      "name": "location",
-                      "orig": "location",
-                      "type": "`$STRING`",
-                    },
-                    {
-                      "example": -0.1276,
-                      "kind": "query",
-                      "name": "lon",
-                      "orig": "lon",
-                      "type": "`$NUMBER`",
-                    },
-                    {
-                      "example": "default",
-                      "kind": "query",
-                      "name": "unit",
-                      "orig": "unit",
-                      "type": "`$STRING`",
-                    },
-                  ],
-                },
                 "kind": "http",
                 "method": "GET",
                 "orig": "/glax_weather.png",
@@ -263,6 +231,52 @@ def make_config():
                     "lit": "glax_weather.png",
                   },
                 ],
+                "parts": [
+                  "glax_weather.png",
+                ],
+                "rename": {},
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "args": {
+                  "query": [
+                    {
+                      "name": "forecast",
+                      "orig": "forecast",
+                      "type": "`$BOOLEAN`",
+                      "kind": "query",
+                    },
+                    {
+                      "name": "lat",
+                      "orig": "lat",
+                      "type": "`$NUMBER`",
+                      "kind": "query",
+                      "example": 51.5074,
+                    },
+                    {
+                      "name": "location",
+                      "orig": "location",
+                      "type": "`$STRING`",
+                      "kind": "query",
+                      "example": "London,UK",
+                    },
+                    {
+                      "name": "lon",
+                      "orig": "lon",
+                      "type": "`$NUMBER`",
+                      "kind": "query",
+                      "example": -0.1276,
+                    },
+                    {
+                      "name": "unit",
+                      "orig": "unit",
+                      "type": "`$STRING`",
+                      "kind": "query",
+                      "example": "default",
+                    },
+                  ],
+                },
                 "select": {
                   "exist": [
                     "forecast",
@@ -272,13 +286,6 @@ def make_config():
                     "unit",
                   ],
                 },
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body`",
-                },
-                "parts": [
-                  "glax_weather.png",
-                ],
               },
             ],
           },
