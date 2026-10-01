@@ -174,7 +174,7 @@ func MakeConfig() map[string]any {
 										},
 										map[string]any{
 											"name": "unit",
-											"orig": "unit",
+											"orig": "units",
 											"type": "`$STRING`",
 											"kind": "query",
 											"example": "default",
@@ -245,7 +245,7 @@ func MakeConfig() map[string]any {
 										},
 										map[string]any{
 											"name": "unit",
-											"orig": "unit",
+											"orig": "units",
 											"type": "`$STRING`",
 											"kind": "query",
 											"example": "default",

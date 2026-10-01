@@ -37,6 +37,8 @@ require_once __DIR__ . '/TransformResponse.php';
 
 GlaxWeatherUtility::setRegistrar(function (GlaxWeatherUtility $u): void {
     $u->clean = [GlaxWeatherClean::class, 'call'];
+    $u->clean_add = [GlaxWeatherClean::class, 'add'];
+    $u->clean_explain = [GlaxWeatherDone::class, 'clean_explain'];
     $u->done = [GlaxWeatherDone::class, 'call'];
     $u->make_error = [GlaxWeatherMakeError::class, 'call'];
     $u->feature_add = [GlaxWeatherFeatureAdd::class, 'call'];

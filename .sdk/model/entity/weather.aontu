@@ -90,7 +90,7 @@ main: kit: entity: weather: {
                 ex: "default"
                 k: "query"
                 n: "unit"
-                or: "unit"
+                or: "units"
                 r: false
                 t: "`$STRING`"
               }
@@ -165,7 +165,7 @@ main: kit: entity: weather: {
                 ex: "default"
                 k: "query"
                 n: "unit"
-                or: "unit"
+                or: "units"
                 r: false
                 t: "`$STRING`"
               }

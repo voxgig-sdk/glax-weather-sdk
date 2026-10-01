@@ -33,6 +33,8 @@ require_relative 'transform_response'
 
 GlaxWeatherUtility.registrar = ->(u) {
   u.clean = GlaxWeatherUtilities::Clean
+  u.clean_add = GlaxWeatherUtilities::CleanAdd
+  u.clean_explain = GlaxWeatherUtilities::CleanExplain
   u.done = GlaxWeatherUtilities::Done
   u.make_error = GlaxWeatherUtilities::MakeError
   u.feature_add = GlaxWeatherUtilities::FeatureAdd

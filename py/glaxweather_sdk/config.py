@@ -199,7 +199,7 @@ def make_config():
                     },
                     {
                       "name": "unit",
-                      "orig": "unit",
+                      "orig": "units",
                       "type": "`$STRING`",
                       "kind": "query",
                       "example": "default",
@@ -270,7 +270,7 @@ def make_config():
                     },
                     {
                       "name": "unit",
-                      "orig": "unit",
+                      "orig": "units",
                       "type": "`$STRING`",
                       "kind": "query",
                       "example": "default",

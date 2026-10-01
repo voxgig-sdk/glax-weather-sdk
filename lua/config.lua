@@ -170,7 +170,7 @@ local function make_config()
                     },
                     {
                       ["name"] = "unit",
-                      ["orig"] = "unit",
+                      ["orig"] = "units",
                       ["type"] = "`$STRING`",
                       ["kind"] = "query",
                       ["example"] = "default",
@@ -241,7 +241,7 @@ local function make_config()
                     },
                     {
                       ["name"] = "unit",
-                      ["orig"] = "unit",
+                      ["orig"] = "units",
                       ["type"] = "`$STRING`",
                       ["kind"] = "query",
                       ["example"] = "default",

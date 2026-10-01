@@ -190,7 +190,7 @@ class Config {
                                     },
                                     {
                                         "name": "unit",
-                                        "orig": "unit",
+                                        "orig": "units",
                                         "type": "`$STRING`",
                                         "kind": "query",
                                         "example": "default"
@@ -261,7 +261,7 @@ class Config {
                                     },
                                     {
                                         "name": "unit",
-                                        "orig": "unit",
+                                        "orig": "units",
                                         "type": "`$STRING`",
                                         "kind": "query",
                                         "example": "default"

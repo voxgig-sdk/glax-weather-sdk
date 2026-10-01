@@ -182,7 +182,7 @@ module GlaxWeatherConfig
                       },
                       {
                         "name" => "unit",
-                        "orig" => "unit",
+                        "orig" => "units",
                         "type" => "`$STRING`",
                         "kind" => "query",
                         "example" => "default",
@@ -253,7 +253,7 @@ module GlaxWeatherConfig
                       },
                       {
                         "name" => "unit",
-                        "orig" => "unit",
+                        "orig" => "units",
                         "type" => "`$STRING`",
                         "kind" => "query",
                         "example" => "default",

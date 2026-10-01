@@ -196,7 +196,7 @@ class GlaxWeatherConfig
                       ],
                       [
                         'name' => 'unit',
-                        'orig' => 'unit',
+                        'orig' => 'units',
                         'type' => '`$STRING`',
                         'kind' => 'query',
                         'example' => 'default',
@@ -267,7 +267,7 @@ class GlaxWeatherConfig
                       ],
                       [
                         'name' => 'unit',
-                        'orig' => 'unit',
+                        'orig' => 'units',
                         'type' => '`$STRING`',
                         'kind' => 'query',
                         'example' => 'default',
