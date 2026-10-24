@@ -79,6 +79,7 @@ module GlaxWeatherConfig
           },
           "optspec" => {
             "clearTimer" => "`$FUNCTION`",
+            "now" => "`$FUNCTION`",
             "setTimer" => "`$FUNCTION`",
           },
           "strict" => false,
@@ -158,6 +159,7 @@ module GlaxWeatherConfig
                         "orig" => "forecast",
                         "type" => "`$BOOLEAN`",
                         "kind" => "query",
+                        "field" => true,
                       },
                       {
                         "name" => "lat",
@@ -172,6 +174,7 @@ module GlaxWeatherConfig
                         "type" => "`$STRING`",
                         "kind" => "query",
                         "example" => "London,UK",
+                        "field" => true,
                       },
                       {
                         "name" => "lon",
@@ -189,14 +192,10 @@ module GlaxWeatherConfig
                       },
                     ],
                   },
-                  "select" => {
-                    "exist" => [
-                      "forecast",
-                      "lat",
-                      "location",
-                      "lon",
-                      "unit",
-                    ],
+                  "select" => {},
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
               ],
@@ -229,6 +228,7 @@ module GlaxWeatherConfig
                         "orig" => "forecast",
                         "type" => "`$BOOLEAN`",
                         "kind" => "query",
+                        "field" => true,
                       },
                       {
                         "name" => "lat",
@@ -243,6 +243,7 @@ module GlaxWeatherConfig
                         "type" => "`$STRING`",
                         "kind" => "query",
                         "example" => "London,UK",
+                        "field" => true,
                       },
                       {
                         "name" => "lon",
@@ -260,14 +261,11 @@ module GlaxWeatherConfig
                       },
                     ],
                   },
-                  "select" => {
-                    "exist" => [
-                      "forecast",
-                      "lat",
-                      "location",
-                      "lon",
-                      "unit",
-                    ],
+                  "select" => {},
+                  "response" => {
+                    "binary" => true,
+                    "kind" => "raw",
+                    "media" => "image/png",
                   },
                 },
               ],

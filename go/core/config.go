@@ -71,6 +71,7 @@ func MakeConfig() map[string]any {
 				},
 				"optspec": map[string]any{
 					"clearTimer": "`$FUNCTION`",
+					"now": "`$FUNCTION`",
 					"setTimer": "`$FUNCTION`",
 				},
 				"strict": false,
@@ -150,6 +151,7 @@ func MakeConfig() map[string]any {
 											"orig": "forecast",
 											"type": "`$BOOLEAN`",
 											"kind": "query",
+											"field": true,
 										},
 										map[string]any{
 											"name": "lat",
@@ -164,6 +166,7 @@ func MakeConfig() map[string]any {
 											"type": "`$STRING`",
 											"kind": "query",
 											"example": "London,UK",
+											"field": true,
 										},
 										map[string]any{
 											"name": "lon",
@@ -181,14 +184,10 @@ func MakeConfig() map[string]any {
 										},
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"forecast",
-										"lat",
-										"location",
-										"lon",
-										"unit",
-									},
+								"select": map[string]any{},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 						},
@@ -221,6 +220,7 @@ func MakeConfig() map[string]any {
 											"orig": "forecast",
 											"type": "`$BOOLEAN`",
 											"kind": "query",
+											"field": true,
 										},
 										map[string]any{
 											"name": "lat",
@@ -235,6 +235,7 @@ func MakeConfig() map[string]any {
 											"type": "`$STRING`",
 											"kind": "query",
 											"example": "London,UK",
+											"field": true,
 										},
 										map[string]any{
 											"name": "lon",
@@ -252,14 +253,11 @@ func MakeConfig() map[string]any {
 										},
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"forecast",
-										"lat",
-										"location",
-										"lon",
-										"unit",
-									},
+								"select": map[string]any{},
+								"response": map[string]any{
+									"binary": true,
+									"kind": "raw",
+									"media": "image/png",
 								},
 							},
 						},

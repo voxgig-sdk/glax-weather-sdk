@@ -20,15 +20,41 @@ const PLAN = [
             "lat": 51.5074,
             "location": "London,UK",
             "lon": -0.1276,
-            "unit": "v1"
+            "unit": "default"
         },
         "headers": [],
+        "cookies": [],
+        "responseMedia": [
+            "application/json"
+        ],
         "query": [
             "location",
             "lon",
             "lat",
             "units",
             "forecast"
+        ],
+        "queryArgs": [
+            {
+                "name": "forecast",
+                "wire": "forecast"
+            },
+            {
+                "name": "lat",
+                "wire": "lat"
+            },
+            {
+                "name": "location",
+                "wire": "location"
+            },
+            {
+                "name": "lon",
+                "wire": "lon"
+            },
+            {
+                "name": "unit",
+                "wire": "units"
+            }
         ],
         "auth": null,
         "status": 200,
@@ -55,15 +81,41 @@ const PLAN = [
             "lat": 51.5074,
             "location": "London,UK",
             "lon": -0.1276,
-            "unit": "v1"
+            "unit": "default"
         },
         "headers": [],
+        "cookies": [],
+        "responseMedia": [
+            "image/png"
+        ],
         "query": [
             "location",
             "lon",
             "lat",
             "units",
             "forecast"
+        ],
+        "queryArgs": [
+            {
+                "name": "forecast",
+                "wire": "forecast"
+            },
+            {
+                "name": "lat",
+                "wire": "lat"
+            },
+            {
+                "name": "location",
+                "wire": "location"
+            },
+            {
+                "name": "lon",
+                "wire": "lon"
+            },
+            {
+                "name": "unit",
+                "wire": "units"
+            }
         ],
         "auth": null,
         "status": 200,

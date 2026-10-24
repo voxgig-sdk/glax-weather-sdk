@@ -96,6 +96,7 @@ def make_config():
         },
         "optspec": {
           "clearTimer": "`$FUNCTION`",
+          "now": "`$FUNCTION`",
           "setTimer": "`$FUNCTION`",
         },
         "strict": False,
@@ -175,6 +176,7 @@ def make_config():
                       "orig": "forecast",
                       "type": "`$BOOLEAN`",
                       "kind": "query",
+                      "field": True,
                     },
                     {
                       "name": "lat",
@@ -189,6 +191,7 @@ def make_config():
                       "type": "`$STRING`",
                       "kind": "query",
                       "example": "London,UK",
+                      "field": True,
                     },
                     {
                       "name": "lon",
@@ -206,14 +209,10 @@ def make_config():
                     },
                   ],
                 },
-                "select": {
-                  "exist": [
-                    "forecast",
-                    "lat",
-                    "location",
-                    "lon",
-                    "unit",
-                  ],
+                "select": {},
+                "response": {
+                  "kind": "json",
+                  "media": "application/json",
                 },
               },
             ],
@@ -246,6 +245,7 @@ def make_config():
                       "orig": "forecast",
                       "type": "`$BOOLEAN`",
                       "kind": "query",
+                      "field": True,
                     },
                     {
                       "name": "lat",
@@ -260,6 +260,7 @@ def make_config():
                       "type": "`$STRING`",
                       "kind": "query",
                       "example": "London,UK",
+                      "field": True,
                     },
                     {
                       "name": "lon",
@@ -277,14 +278,11 @@ def make_config():
                     },
                   ],
                 },
-                "select": {
-                  "exist": [
-                    "forecast",
-                    "lat",
-                    "location",
-                    "lon",
-                    "unit",
-                  ],
+                "select": {},
+                "response": {
+                  "binary": True,
+                  "kind": "raw",
+                  "media": "image/png",
                 },
               },
             ],

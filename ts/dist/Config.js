@@ -87,6 +87,7 @@ class Config {
             },
             "optspec": {
                 "clearTimer": "`$FUNCTION`",
+                "now": "`$FUNCTION`",
                 "setTimer": "`$FUNCTION`"
             },
             "strict": false,
@@ -165,7 +166,8 @@ class Config {
                                         "name": "forecast",
                                         "orig": "forecast",
                                         "type": "`$BOOLEAN`",
-                                        "kind": "query"
+                                        "kind": "query",
+                                        "field": true
                                     },
                                     {
                                         "name": "lat",
@@ -179,7 +181,8 @@ class Config {
                                         "orig": "location",
                                         "type": "`$STRING`",
                                         "kind": "query",
-                                        "example": "London,UK"
+                                        "example": "London,UK",
+                                        "field": true
                                     },
                                     {
                                         "name": "lon",
@@ -197,14 +200,10 @@ class Config {
                                     }
                                 ]
                             },
-                            "select": {
-                                "exist": [
-                                    "forecast",
-                                    "lat",
-                                    "location",
-                                    "lon",
-                                    "unit"
-                                ]
+                            "select": {},
+                            "response": {
+                                "kind": "json",
+                                "media": "application/json"
                             }
                         }
                     ]
@@ -236,7 +235,8 @@ class Config {
                                         "name": "forecast",
                                         "orig": "forecast",
                                         "type": "`$BOOLEAN`",
-                                        "kind": "query"
+                                        "kind": "query",
+                                        "field": true
                                     },
                                     {
                                         "name": "lat",
@@ -250,7 +250,8 @@ class Config {
                                         "orig": "location",
                                         "type": "`$STRING`",
                                         "kind": "query",
-                                        "example": "London,UK"
+                                        "example": "London,UK",
+                                        "field": true
                                     },
                                     {
                                         "name": "lon",
@@ -268,14 +269,11 @@ class Config {
                                     }
                                 ]
                             },
-                            "select": {
-                                "exist": [
-                                    "forecast",
-                                    "lat",
-                                    "location",
-                                    "lon",
-                                    "unit"
-                                ]
+                            "select": {},
+                            "response": {
+                                "binary": true,
+                                "kind": "raw",
+                                "media": "image/png"
                             }
                         }
                     ]

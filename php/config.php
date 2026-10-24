@@ -93,6 +93,7 @@ class GlaxWeatherConfig
           ],
           'optspec' => [
             'clearTimer' => '`$FUNCTION`',
+            'now' => '`$FUNCTION`',
             'setTimer' => '`$FUNCTION`',
           ],
           'strict' => false,
@@ -172,6 +173,7 @@ class GlaxWeatherConfig
                         'orig' => 'forecast',
                         'type' => '`$BOOLEAN`',
                         'kind' => 'query',
+                        'field' => true,
                       ],
                       [
                         'name' => 'lat',
@@ -186,6 +188,7 @@ class GlaxWeatherConfig
                         'type' => '`$STRING`',
                         'kind' => 'query',
                         'example' => 'London,UK',
+                        'field' => true,
                       ],
                       [
                         'name' => 'lon',
@@ -203,14 +206,10 @@ class GlaxWeatherConfig
                       ],
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'forecast',
-                      'lat',
-                      'location',
-                      'lon',
-                      'unit',
-                    ],
+                  'select' => [],
+                  'response' => [
+                    'kind' => 'json',
+                    'media' => 'application/json',
                   ],
                 ],
               ],
@@ -243,6 +242,7 @@ class GlaxWeatherConfig
                         'orig' => 'forecast',
                         'type' => '`$BOOLEAN`',
                         'kind' => 'query',
+                        'field' => true,
                       ],
                       [
                         'name' => 'lat',
@@ -257,6 +257,7 @@ class GlaxWeatherConfig
                         'type' => '`$STRING`',
                         'kind' => 'query',
                         'example' => 'London,UK',
+                        'field' => true,
                       ],
                       [
                         'name' => 'lon',
@@ -274,14 +275,11 @@ class GlaxWeatherConfig
                       ],
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'forecast',
-                      'lat',
-                      'location',
-                      'lon',
-                      'unit',
-                    ],
+                  'select' => [],
+                  'response' => [
+                    'binary' => true,
+                    'kind' => 'raw',
+                    'media' => 'image/png',
                   ],
                 ],
               ],

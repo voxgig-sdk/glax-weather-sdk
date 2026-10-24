@@ -3,5 +3,18 @@
     "SUMMARY.md"
   ],
   "config": ".sdk/doc/qa/vale.ini",
-  "routes": {}
+  "routes": {},
+  "quoted": {
+    "SUMMARY.md": [
+      "Current temperature",
+      "Location name",
+      "Production server",
+      "Successful response with weather data",
+      "Successful response with weather image",
+      "This API provides current weather data for a specified location, presenting information visually through Glax. Users can retrieve data in JSON or PNG formats and customize their queries with parameters like location, units, and forecast options.",
+      "Units used for measurements",
+      "Weather conditions",
+      "Weather forecast data (if requested)"
+    ]
+  }
 }

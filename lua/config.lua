@@ -67,6 +67,7 @@ local function make_config()
         },
         ["optspec"] = {
           ["clearTimer"] = "`$FUNCTION`",
+          ["now"] = "`$FUNCTION`",
           ["setTimer"] = "`$FUNCTION`",
         },
         ["strict"] = false,
@@ -146,6 +147,7 @@ local function make_config()
                       ["orig"] = "forecast",
                       ["type"] = "`$BOOLEAN`",
                       ["kind"] = "query",
+                      ["field"] = true,
                     },
                     {
                       ["name"] = "lat",
@@ -160,6 +162,7 @@ local function make_config()
                       ["type"] = "`$STRING`",
                       ["kind"] = "query",
                       ["example"] = "London,UK",
+                      ["field"] = true,
                     },
                     {
                       ["name"] = "lon",
@@ -177,14 +180,10 @@ local function make_config()
                     },
                   },
                 },
-                ["select"] = {
-                  ["exist"] = {
-                    "forecast",
-                    "lat",
-                    "location",
-                    "lon",
-                    "unit",
-                  },
+                ["select"] = {},
+                ["response"] = {
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
             },
@@ -217,6 +216,7 @@ local function make_config()
                       ["orig"] = "forecast",
                       ["type"] = "`$BOOLEAN`",
                       ["kind"] = "query",
+                      ["field"] = true,
                     },
                     {
                       ["name"] = "lat",
@@ -231,6 +231,7 @@ local function make_config()
                       ["type"] = "`$STRING`",
                       ["kind"] = "query",
                       ["example"] = "London,UK",
+                      ["field"] = true,
                     },
                     {
                       ["name"] = "lon",
@@ -248,14 +249,11 @@ local function make_config()
                     },
                   },
                 },
-                ["select"] = {
-                  ["exist"] = {
-                    "forecast",
-                    "lat",
-                    "location",
-                    "lon",
-                    "unit",
-                  },
+                ["select"] = {},
+                ["response"] = {
+                  ["binary"] = true,
+                  ["kind"] = "raw",
+                  ["media"] = "image/png",
                 },
               },
             },

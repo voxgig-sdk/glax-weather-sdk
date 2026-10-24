@@ -98,14 +98,9 @@ main: kit: entity: weather: {
           }
           m: "GET"
           o: "/glax_weather.json"
-          q: {
-            exist: [
-              "forecast"
-              "lat"
-              "location"
-              "lon"
-              "unit"
-            ]
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -173,14 +168,10 @@ main: kit: entity: weather: {
           }
           m: "GET"
           o: "/glax_weather.png"
-          q: {
-            exist: [
-              "forecast"
-              "lat"
-              "location"
-              "lon"
-              "unit"
-            ]
+          rs: {
+            binary: true
+            kind: "raw"
+            media: "image/png"
           }
           s: [
             {
